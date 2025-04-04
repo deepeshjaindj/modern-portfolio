@@ -5,6 +5,7 @@ import { Navbar } from "@/components/molecules";
 
 const poppinsSerif = Poppins({
   variable: "--font-poppins-serif",
+  subsets: ["latin"],
   weight: "700",
 });
 
