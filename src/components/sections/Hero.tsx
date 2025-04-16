@@ -18,7 +18,7 @@ const Hero: NextPage = () => {
        
         {/* Hero Content */}
         <motion.div
-          className="relative z-20 flex flex-col items-center text-center space-y-6 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 sm:max-w-[90%] md:max-w-[80%] lg:max-w-[70%] xl:max-w-[60%]"
+          className="relative z-20 flex flex-col items-center text-center space-y-6 px-8 lg:px-10 xl:px-12 sm:max-w-[90%] md:max-w-[80%] lg:max-w-[70%] xl:max-w-[60%]"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
@@ -47,13 +47,13 @@ const Hero: NextPage = () => {
 
           {/* 💡 Engaging Subheading */}
           <motion.h2
-            className="text-xl sm:text-2xl md:text-3xl font-medium text-white/90 mt-4 font-sans flex items-center"
+            className="text-2xl md:text-3xl font-medium text-white/90 mt-4 font-sans flex items-center flex-col lg:flex-row gap-2 lg:gap-0"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
           >
-            <span>Hello, I&apos;m Deepesh Jain</span> 
-            <div className="w-[1.5em] h-[1.5em] overflow-hidden rounded-full border-2 border-blue-500 mx-3 hover:scale-125">
+            <span className='order-2 lg:order-1'>Hello, I&apos;m Deepesh Jain</span> 
+            <div className="w-[2.5em] h-[2.5em] lg:w-[1.5em] lg:h-[1.5em] overflow-hidden rounded-full border-2 border-blue-500 mx-3 hover:scale-125 order-1 lg:order-2 mb-3 lg:mb-0">
               <Image
                 src="/deepesh-profile.png"  
                 alt="Deepesh Jain"
@@ -62,11 +62,11 @@ const Hero: NextPage = () => {
                 className="object-cover w-full h-full"
               />
             </div>
-            <span>a Fullstack Developer</span>
+            <span className='order-3'>a Fullstack Developer</span>
           </motion.h2>
 
           {/* 🚀 Call-to-Action Button */}
-          <div className='flex flex-col sm:flex-row gap-5'>
+          <div className='flex flex-col sm:flex-row gap-0 sm:gap-5'>
             <motion.button
               whileTap={{ scale: 0.95 }}
               initial={{ opacity: 0, y: 10 }}
@@ -86,14 +86,14 @@ const Hero: NextPage = () => {
             </motion.button>
 
             <motion.button
-            whileTap={{ scale: 0.95 }}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="relative flex items-center justify-center px-6 py-3 text-lg text-white bg-transparent border border-white/50
-                      rounded-full shadow-lg hover:bg-gradient-to-r hover:from-purple-500 hover:to-blue-500 
-                      transition-all duration-500 group overflow-hidden font-sans mt-4"
-          >
+              whileTap={{ scale: 0.95 }}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="relative flex items-center justify-center px-6 py-3 text-lg text-white bg-transparent border border-white/50
+                        rounded-full shadow-lg hover:bg-gradient-to-r hover:from-purple-500 hover:to-blue-500 
+                        transition-all duration-500 group overflow-hidden font-sans mt-4"
+            >
             {/* Button Text */}
             <span className="relative z-10">Read Blog</span>
 

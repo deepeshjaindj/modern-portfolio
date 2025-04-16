@@ -1,119 +1,378 @@
 "use client";
+import {
+  motion,
+  AnimatePresence,
+  useScroll,
+  useMotionValueEvent,
+} from "motion/react";
+import Link from "next/link";
+import React, { useRef, useState } from "react";
+import Image from "next/image";
+import { classnames } from "@/utils";
+import { BsX } from "react-icons/bs";
+import { BiMenu } from "react-icons/bi";
+import { FaCode, FaHome } from "react-icons/fa";
+import { FaUserSecret } from "react-icons/fa6";
+import { MdChat, MdWavingHand, MdWork } from "react-icons/md";
 
-import { useState, useEffect } from "react";
-import { motion } from "motion/react";
-import { FaBars, FaTimes } from "react-icons/fa"; // Importing icons from react-icons
+interface NavbarProps {
+  children: React.ReactNode;
+  className?: string;
+}
 
-const navLinks = [
-  { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "Experience", href: "#experience" },
-  { name: "Projects", href: "#projects" },
-  { name: "Contact", href: "#contact" },
-];
+interface NavBodyProps {
+  children: React.ReactNode;
+  className?: string;
+  visible?: boolean;
+}
 
-const Navbar = () => {
-  const [activeSection, setActiveSection] = useState("#home");
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // State to manage menu visibility
+interface NavItemsProps {
+  items: {
+    name: string;
+    link: string;
+  }[];
+  className?: string;
+  onItemClick?: () => void;
+}
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-  
-      for (const link of navLinks) {
-        const section = document.querySelector(link.href) as HTMLElement; // Cast to HTMLElement
-        if (section) {
-          const offsetTop = section.offsetTop - 80; // Adjust for navbar height
-          const offsetBottom = offsetTop + section.offsetHeight;
-  
-          if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
-            setActiveSection(link.href);
-            window.history.replaceState(null, "", link.href);
-            break;
-          }
-        }
-      }
-    };
-  
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+interface MobileNavProps {
+  children: React.ReactNode;
+  className?: string;
+  visible?: boolean;
+}
 
-  const handleLinkClick = (href: string) => {
-    const section = document.querySelector(href) as HTMLElement;
-    if (section) {
-      window.scrollTo({ top: section.offsetTop - 70, behavior: "smooth" });
-      setActiveSection(href);
-      window.history.pushState(null, "", href);
-      setIsMenuOpen(false); // Close the menu on link click
+interface MobileNavHeaderProps {
+  children: React.ReactNode;
+  className?: string;
+}
+
+interface MobileNavMenuProps {
+  children: React.ReactNode;
+  className?: string;
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+interface NavbarLogoProps {
+  visible?: boolean;
+}
+
+export const NavbarContainer = ({ children, className }: NavbarProps) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollY } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+  const [visible, setVisible] = useState<boolean>(false);
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    if (latest > 100) {
+      setVisible(true);
+    } else {
+      setVisible(false);
     }
+  });
+
+  return (
+    <motion.div
+      ref={ref}
+      className={classnames("fixed inset-x-0 top-10 z-40 w-full", className)}
+    >
+      {React.Children.map(children, (child) =>
+        React.isValidElement(child)
+          ? React.cloneElement(
+              child as React.ReactElement<{ visible?: boolean }>,
+              { visible },
+            )
+          : child,
+      )}
+    </motion.div>
+  );
+};
+
+export const NavBody = ({ children, className, visible }: NavBodyProps) => {
+  return (
+    <motion.div
+      animate={{
+        backdropFilter: visible ? "blur(10px)" : "none",
+        boxShadow: visible
+          ? "0 0 24px rgba(34, 42, 53, 0.06), 0 1px 1px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(34, 42, 53, 0.04), 0 0 4px rgba(34, 42, 53, 0.08), 0 16px 68px rgba(47, 48, 55, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1) inset"
+          : "none",
+        width: visible ? "50%" : "100%",
+        y: visible ? 20 : 0,
+      }}
+      transition={{
+        type: "spring",
+        stiffness: 200,
+        damping: 50,
+      }}
+      style={{
+        minWidth: "800px",
+      }}
+      className={classnames(
+        "relative z-[60] mx-auto hidden w-full max-w-7xl flex-row items-center justify-between self-start rounded-full bg-transparent px-4 py-2 lg:flex font-sans",
+        visible && "bg-backgroundBlue/50",
+        className,
+      )}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
+export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
+  const [hovered, setHovered] = useState<number | null>(null);
+
+  return (
+    <motion.div
+      onMouseLeave={() => setHovered(null)}
+      className={classnames(
+        "absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-md font-medium text-white transition duration-200 hover:text-backgroundBlue lg:flex lg:space-x-2",
+        className,
+      )}
+    >
+      {items.map((item, idx) => (
+        <Link
+          onMouseEnter={() => setHovered(idx)}
+          onClick={onItemClick}
+          className="relative px-4 py-2 text-white hover:text-backgroundBlue"
+          key={`link-${idx}`}
+          href={item.link}
+        >
+          {hovered === idx && (
+            <motion.div
+              layoutId="hovered"
+              className="absolute inset-0 h-full w-full rounded-full bg-gray-100"
+            />
+          )}
+          <span className="relative z-20">{item.name}</span>
+        </Link>
+      ))}
+    </motion.div>
+  );
+};
+
+export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
+  return (
+    <motion.div
+      animate={{
+        backdropFilter: visible ? "blur(10px)" : "none",
+        boxShadow: visible
+          ? "0 0 24px rgba(34, 42, 53, 0.06), 0 1px 1px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(34, 42, 53, 0.04), 0 0 4px rgba(34, 42, 53, 0.08), 0 16px 68px rgba(47, 48, 55, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1) inset"
+          : "none",
+        width: visible ? "90%" : "100%",
+        paddingRight: visible ? "12px" : "0px",
+        paddingLeft: visible ? "12px" : "0px",
+        borderRadius: visible ? "4px" : "2rem",
+        y: visible ? 20 : 0,
+      }}
+      transition={{
+        type: "spring",
+        stiffness: 200,
+        damping: 50,
+      }}
+      className={classnames(
+        "relative z-50 mx-auto flex w-full max-w-[calc(100vw-2rem)] flex-col items-center justify-between bg-transparent px-0 py-2 lg:hidden",
+        visible && "bg-backgroundBlue/70",
+        className,
+      )}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
+export const MobileNavHeader = ({
+  children,
+  className,
+}: MobileNavHeaderProps) => {
+  return (
+    <div
+      className={classnames(
+        "flex w-full flex-row items-center justify-between",
+        className,
+      )}
+    >
+      {children}
+    </div>
+  );
+};
+
+export const MobileNavMenu = ({
+  children,
+  className,
+  isOpen,
+}: MobileNavMenuProps) => {
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className={classnames(
+            "absolute inset-x-0 top-16 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-lg bg-backgroundBlue px-4 py-8 shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]",
+            className,
+          )}
+        >
+          {children}
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+};
+
+export const MobileNavToggle = ({
+  isOpen,
+  onClick,
+}: {
+  isOpen: boolean;
+  onClick: () => void;
+}) => {
+  return isOpen ? (
+    <BsX className="text-white text-3xl" onClick={onClick} />
+  ) : (
+    <BiMenu className="text-white text-3xl" onClick={onClick} />
+  );
+};
+
+export const NavbarLogo = ({ visible }: NavbarLogoProps) => {
+  return (
+    <Link
+      href="#"
+      className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-md font-normal text-black"
+    >
+      <Image
+        src="/dj-logo.png"
+        alt="logo"
+        width={33}
+        height={30}
+      />
+      { visible && <span className="font-medium text-black">Deepesh Jain</span>}
+      
+    </Link>
+  );
+};
+
+export const NavbarButton = ({
+  href,
+  as: Tag = "a",
+  children,
+  className,
+  variant = "primary",
+  ...props
+}: {
+  href?: string;
+  as?: React.ElementType;
+  children: React.ReactNode;
+  className?: string;
+  variant?: "primary" | "secondary" | "dark" | "gradient";
+} & (
+  | React.ComponentPropsWithoutRef<"a">
+  | React.ComponentPropsWithoutRef<"button">
+)) => {
+  const baseStyles =
+    "px-4 py-2 flex justify-center rounded-full bg-white button bg-white text-backgroundBlue text-md font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 text-center items-center gap-2";
+
+  const variantStyles = {
+    primary:
+      "shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]",
+    secondary: "bg-transparent shadow-none",
+    dark: "bg-black text-white shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]",
+    gradient:
+      "bg-gradient-to-b from-blue-500 to-blue-700 text-white shadow-[0px_2px_0px_0px_rgba(255,255,255,0.3)_inset]",
   };
 
   return (
-    <motion.nav
-      initial={{ opacity: 0, y: -30, scale: 0.95 }}
-      animate={{ opacity: 1, y: 0, scale: 1 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      className="fixed top-10 left-1/2 z-50 -translate-x-1/2 rounded-full bg-secondary/30 px-2 py-1 shadow-xl backdrop-blur-md border border-white/30 font-sans"
+    <Tag
+      href={href || undefined}
+      className={classnames(baseStyles, variantStyles[variant], className)}
+      {...props}
     >
-      <div className="flex items-center justify-between">
-        <ul className="hidden md:flex items-center space-x-1">
-          {navLinks.map((link) => (
-            <motion.li
-              key={link.href}
-              className="relative group"
-              whileHover={{ scale: 1.05 }}
-            >
-              <button
-                onClick={() => handleLinkClick(link.href)}
-                className={`block px-4 py-1 text-base font-medium transition-colors duration-200 rounded-full ${
-                  activeSection === link.href
-                    ? "bg-backgroundBlue/15 text-white shadow-lg border border-white/50"
-                    : "text-white/90 hover:text-primaryYellow"
-                }`}
-              >
-                {link.name}
-              </button>
-            </motion.li>
-          ))}
-        </ul>
-        <button
-          className="md:hidden text-white"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          {isMenuOpen ? <FaTimes /> : <FaBars />}
-        </button>
-      </div>
-
-      {/* Mobile Menu Overlay */}
-      {isMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-backgroundBlue bg-opacity-70 flex flex-col items-center justify-center">
-          <ul className="flex flex-col space-y-4">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <button
-                  onClick={() => handleLinkClick(link.href)}
-                  className={`block px-4 py-2 text-lg font-medium text-white transition-colors duration-200 rounded-full ${
-                    activeSection === link.href
-                      ? "bg-backgroundBlue/15 text-white shadow-lg border border-white/50"
-                      : "text-white/90 hover:text-primaryYellow"
-                  }`}
-                >
-                  {link.name}
-                </button>
-              </li>
-            ))}
-          </ul>
-          <button
-            className="absolute top-4 right-4 text-white"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            <FaTimes size={24} />
-          </button>
-        </div>
-      )}
-    </motion.nav>
+      {children}
+      <MdWavingHand />
+    </Tag>
   );
 };
+
+const Navbar = () => {
+  const navItems = [
+    {
+      name: "Home",
+      link: "#home",
+      icon: <FaHome />,
+    },
+    {
+      name: "About",
+      link: "#about",
+      icon: <FaUserSecret />,
+    },
+    {
+      name: "Experience",
+      link: "#experience",
+      icon: <MdWork />,
+    },
+    {
+      name: "Projects",
+      link: "#projects",
+      icon: <FaCode />,
+    },
+    {
+      name: "Contact",
+      link: "#contact",
+      icon: <MdChat />,
+    },
+  ];
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  return <div className="relative w-full">
+  <NavbarContainer>
+    {/* Desktop Navigation */}
+    <NavBody>
+      <NavbarLogo />
+      <NavItems items={navItems} />
+      <div className="flex items-center gap-4">
+        <NavbarButton variant="primary">Get in Touch</NavbarButton>
+      </div>
+    </NavBody>
+
+    {/* Mobile Navigation */}
+    <MobileNav>
+      <MobileNavHeader>
+        <NavbarLogo />
+        <MobileNavToggle
+          isOpen={isMobileMenuOpen}
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        />
+      </MobileNavHeader>
+
+      <MobileNavMenu
+        isOpen={isMobileMenuOpen}
+        onClose={() => setIsMobileMenuOpen(false)}
+      >
+        {navItems.map((item, idx) => (
+          <a
+            key={`mobile-link-${idx}`}
+            href={item.link}
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="relative text-white w-full flex justify-between items-center text-md"
+          >
+            <span className="block">{item.name}</span>
+            { item.icon }
+          </a>
+        ))}
+        <div className="flex w-full flex-col gap-4">
+          <NavbarButton
+            onClick={() => setIsMobileMenuOpen(false)}
+            variant="primary"
+            className="w-full"
+          >
+            Get in Touch
+          </NavbarButton>
+        </div>
+      </MobileNavMenu>
+    </MobileNav>
+  </NavbarContainer>
+</div>
+}
 
 export default Navbar;
