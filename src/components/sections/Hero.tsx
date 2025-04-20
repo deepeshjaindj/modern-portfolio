@@ -42,7 +42,7 @@ const Hero: NextPage = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
           >
-            Crafting Scalable, Performant, and Future-Ready <ShiningText>Web Solutions</ShiningText>
+            Crafting Scalable, Performant, and Future-Ready <ShiningText variant='dark'>Web Solutions</ShiningText>
           </motion.h1>
 
           {/* 💡 Engaging Subheading */}

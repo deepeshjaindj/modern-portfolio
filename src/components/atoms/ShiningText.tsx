@@ -1,14 +1,17 @@
+import { classnames } from "@/utils";
 import { motion } from "motion/react";
 import React from "react";
 
 interface ShiningTextProps {
   children: React.ReactNode;
+  variant: 'light' | 'dark';
+  className?: string;
 }
 
-const ShiningText: React.FC<ShiningTextProps> = ({ children }) => {
+const ShiningText: React.FC<ShiningTextProps> = ({ children, className, variant }) => {
   return (
     <motion.span
-      className="relative font-display italic font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500"
+      className={classnames('relative font-display italic font-bold text-transparent bg-clip-text', className)}
       animate={{
         backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
       }}
@@ -27,7 +30,7 @@ const ShiningText: React.FC<ShiningTextProps> = ({ children }) => {
       }}
       style={{
         backgroundSize: "200% 200%",
-        backgroundImage: "linear-gradient(45deg, #ff8800, #ffea00f8, #ff5100)",
+        backgroundImage: `${variant === 'dark' ? 'linear-gradient(45deg, #ff8800, #ffea00f8, #ff5100)' : 'linear-gradient(45deg, #ce2094, #7324daf8, #e2258d)'}`,
       }}
     >
       { children }
