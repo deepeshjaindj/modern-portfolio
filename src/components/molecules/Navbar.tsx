@@ -33,6 +33,7 @@ interface NavItemsProps {
   }[];
   className?: string;
   onItemClick?: () => void;
+  visible?: boolean;
 }
 
 interface MobileNavProps {
@@ -51,10 +52,6 @@ interface MobileNavMenuProps {
   className?: string;
   isOpen: boolean;
   onClose: () => void;
-}
-
-interface NavbarLogoProps {
-  visible?: boolean;
 }
 
 export const NavbarContainer = ({ children, className }: NavbarProps) => {
@@ -76,7 +73,7 @@ export const NavbarContainer = ({ children, className }: NavbarProps) => {
   return (
     <motion.div
       ref={ref}
-      className={classnames("fixed inset-x-0 top-10 z-40 w-full", className)}
+      className={classnames("fixed inset-x-0 z-40 w-full top-10", { 'top-1': visible }, className)}
     >
       {React.Children.map(children, (child) =>
         React.isValidElement(child)
@@ -98,7 +95,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
         boxShadow: visible
           ? "0 0 24px rgba(34, 42, 53, 0.06), 0 1px 1px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(34, 42, 53, 0.04), 0 0 4px rgba(34, 42, 53, 0.08), 0 16px 68px rgba(47, 48, 55, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1) inset"
           : "none",
-        width: visible ? "50%" : "100%",
+        width: visible ? "40%" : "100%",
         y: visible ? 20 : 0,
       }}
       transition={{
@@ -110,24 +107,32 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
         minWidth: "800px",
       }}
       className={classnames(
-        "relative z-[60] mx-auto hidden w-full max-w-7xl flex-row items-center justify-between self-start rounded-full bg-transparent px-4 py-2 lg:flex font-sans",
+        "relative z-[60] mx-auto hidden w-full max-w-7xl flex-row items-center justify-between self-start rounded-full bg-transparent px-4 py-1 lg:flex font-sans",
         visible && "bg-backgroundBlue/50",
         className,
       )}
     >
-      {children}
+      {React.Children.map(children, (child) =>
+        React.isValidElement(child)
+          ? React.cloneElement(
+              child as React.ReactElement<{ visible?: boolean }>,
+              { visible },
+            )
+          : child,
+      )}
     </motion.div>
   );
 };
 
-export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
+export const NavItems = ({ items, className, onItemClick, visible }: NavItemsProps) => {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
     <motion.div
       onMouseLeave={() => setHovered(null)}
       className={classnames(
-        "absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-md font-medium text-white transition duration-200 hover:text-backgroundBlue lg:flex lg:space-x-2",
+        "absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium text-white transition duration-200 hover:text-backgroundBlue lg:flex lg:space-x-2",
+        { 'relative': visible },
         className,
       )}
     >
@@ -236,20 +241,18 @@ export const MobileNavToggle = ({
   );
 };
 
-export const NavbarLogo = ({ visible }: NavbarLogoProps) => {
+export const NavbarLogo = () => {
   return (
     <Link
-      href="#"
-      className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-md font-normal text-black"
+      href="#home"
+      className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
     >
       <Image
         src="/dj-logo.png"
         alt="logo"
-        width={33}
-        height={30}
+        width={27}
+        height={25}
       />
-      { visible && <span className="font-medium text-black">Deepesh Jain</span>}
-      
     </Link>
   );
 };
@@ -272,7 +275,7 @@ export const NavbarButton = ({
   | React.ComponentPropsWithoutRef<"button">
 )) => {
   const baseStyles =
-    "px-4 py-2 flex justify-center rounded-full bg-white button bg-white text-backgroundBlue text-md font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 text-center items-center gap-2";
+    "px-4 py-2 flex justify-center rounded-full bg-white button bg-white text-backgroundBlue text-md lg:text-sm font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 text-center items-center gap-2";
 
   const variantStyles = {
     primary:
