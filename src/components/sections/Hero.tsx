@@ -9,7 +9,7 @@ import { FiExternalLink, FiMail } from 'react-icons/fi';
 const Hero: NextPage = () => {
   return (
     <AuroraBackground>
-      <div className="relative flex items-center justify-center min-h-screen w-full bg-backgroundBlue" id='home'>
+      <div className="relative flex items-center justify-center min-h-dvh w-full bg-backgroundBlue" id='home'>
         {/* Base Background */}
         <div className="absolute inset-0 bg-backgroundBlue color-backgroundBlue" />
 

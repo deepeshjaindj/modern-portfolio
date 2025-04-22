@@ -15,7 +15,7 @@ const About = () => {
   ];
 
   return (
-    <div className="relative flex flex-col items-center justify-center min-h-screen w-full bg-white text-slate-800">
+    <div className="relative flex flex-col items-center justify-center min-h-dvh w-full bg-white text-slate-800">
       <BackgroundBeamsCollide>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -66,12 +66,12 @@ const About = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7 }}
               viewport={{ once: true }}
-              className="flex-1 flex justify-center order-1 md:order-2"
+              className="flex-1 flex justify-end order-1 md:order-2"
             >
               <Image
                 src="/deepesh-jain-crop.png"
                 alt="Deepesh Jain"
-                width={400}
+                width={450}
                 height={400}
                 className="rounded-2xl object-cover md:shadow-xl"
               />
