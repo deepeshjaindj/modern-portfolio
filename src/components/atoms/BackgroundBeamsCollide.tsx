@@ -72,7 +72,7 @@ const BackgroundBeamsWithCollision = ({
       ref={parentRef}
       className={classnames(
         "min-h-dvh bg-gradient-to-b from-white to-primaryYellow/20 relative flex items-center w-full justify-center overflow-hidden",
-        className
+        className,
       )}
     >
       {beams.map((beam) => (
@@ -201,7 +201,7 @@ const CollisionMechanism = React.forwardRef<
         }}
         className={classnames(
           "absolute left-0 top-20 m-auto h-14 w-px rounded-full bg-gradient-to-t from-indigo-500 via-purple-500 to-transparent",
-          beamOptions.className
+          beamOptions.className,
         )}
       />
       <AnimatePresence>
@@ -233,7 +233,10 @@ const Explosion = ({ ...props }: React.HTMLProps<HTMLDivElement>) => {
   }));
 
   return (
-    <div {...props} className={classnames("absolute z-50 h-2 w-2", props.className)}>
+    <div
+      {...props}
+      className={classnames("absolute z-50 h-2 w-2", props.className)}
+    >
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

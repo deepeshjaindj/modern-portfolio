@@ -1,17 +1,38 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import React from 'react';
-import { motion } from 'framer-motion';
-import { BackgroundBeamsCollide, FloatingDock, ShiningText } from '../atoms';
-import { FaGithub, FaLinkedin, FaStackOverflow, FaTwitter } from 'react-icons/fa';
+import Image from "next/image";
+import React from "react";
+import { motion } from "framer-motion";
+import { BackgroundBeamsCollide, FloatingDock, ShiningText } from "../atoms";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaStackOverflow,
+  FaTwitter,
+} from "react-icons/fa";
 
 const About = () => {
   const links = [
-    { title: 'LinkedIn', icon: <FaLinkedin className="w-full h-full text-neutral-500" />, href: '#' },
-    { title: 'Github', icon: <FaGithub className="w-full h-full text-neutral-500" />, href: '#' },
-    { title: 'Stack Overflow', icon: <FaStackOverflow className="w-full h-full text-neutral-500" />, href: '#' },
-    { title: 'X aka Twitter', icon: <FaTwitter className="w-full h-full text-neutral-500" />, href: '#' },
+    {
+      title: "LinkedIn",
+      icon: <FaLinkedin className="w-full h-full text-neutral-500" />,
+      href: "#",
+    },
+    {
+      title: "Github",
+      icon: <FaGithub className="w-full h-full text-neutral-500" />,
+      href: "#",
+    },
+    {
+      title: "Stack Overflow",
+      icon: <FaStackOverflow className="w-full h-full text-neutral-500" />,
+      href: "#",
+    },
+    {
+      title: "X aka Twitter",
+      icon: <FaTwitter className="w-full h-full text-neutral-500" />,
+      href: "#",
+    },
   ];
 
   return (
@@ -25,10 +46,12 @@ const About = () => {
           className="w-full max-w-7xl flex flex-col items-center text-center pt-12 font-sans px-4 sm:px-6 lg:px-10 xl:px-16"
         >
           <h1 className="text-4xl sm:text-4xl md:text-5xl font-serif font-semibold leading-tight max-w-6xl">
-            More Than Just Code – <ShiningText variant="light">I Build Experiences</ShiningText>
+            More Than Just Code –{" "}
+            <ShiningText variant="light">I Build Experiences</ShiningText>
           </h1>
           <h3 className="text-lg sm:text-xl md:text-2xl mt-2 text-gray-700">
-            Driven by curiosity, focused on craft, and fueled by coffee & creativity
+            Driven by curiosity, focused on craft, and fueled by coffee &
+            creativity
           </h3>
 
           <div className="mt-15 w-full flex flex-col md:flex-row gap-10 items-center">
@@ -40,22 +63,32 @@ const About = () => {
               viewport={{ once: true }}
               className="flex-1 text-left text-base md:text-lg leading-relaxed space-y-4 order-2 md:order-1"
             >
-              <h4 className="text-slate-600 font-bold text-sm tracking-wide text-center md:text-left">KNOW ABOUT ME</h4>
-              <p className='text-center md:text-left'>
-                Hey, I’m Deepesh Jain — a Fullstack Developer who’s obsessed with crafting interfaces that don’t just look good, but feel right.
+              <h4 className="text-slate-600 font-bold text-sm tracking-wide text-center md:text-left">
+                KNOW ABOUT ME
+              </h4>
+              <p className="text-center md:text-left">
+                Hey, I’m Deepesh Jain — a Fullstack Developer who’s obsessed
+                with crafting interfaces that don’t just look good, but feel
+                right.
               </p>
-              <p className='text-center md:text-left'>
-                I believe the best web experiences happen when design and engineering shake hands — and that’s exactly where I thrive.
-                Whether I’m architecting a system or obsessing over a button’s hover state, I bring equal parts logic and love to both sides of the stack.
+              <p className="text-center md:text-left">
+                I believe the best web experiences happen when design and
+                engineering shake hands — and that’s exactly where I thrive.
+                Whether I’m architecting a system or obsessing over a button’s
+                hover state, I bring equal parts logic and love to both sides of
+                the stack.
               </p>
-              <p className='text-center md:text-left'>
-                Performance, accessibility, responsive design, clean code — these aren’t buzzwords to me, they’re checkboxes I never skip.
+              <p className="text-center md:text-left">
+                Performance, accessibility, responsive design, clean code —
+                these aren’t buzzwords to me, they’re checkboxes I never skip.
               </p>
-              <p className='text-center md:text-left'>
-                When I’m not coding, I’m probably diving into a new tech tool, sipping coffee ☕, or mentoring fellow devs in the community.
+              <p className="text-center md:text-left">
+                When I’m not coding, I’m probably diving into a new tech tool,
+                sipping coffee ☕, or mentoring fellow devs in the community.
               </p>
-              <p className='text-center md:text-left'>
-                Let’s build something that isn’t just functional — but unforgettable. 🚀
+              <p className="text-center md:text-left">
+                Let’s build something that isn’t just functional — but
+                unforgettable. 🚀
               </p>
               <FloatingDock mobileClassName="translate-y-20" items={links} />
             </motion.div>

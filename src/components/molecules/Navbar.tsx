@@ -73,7 +73,11 @@ export const NavbarContainer = ({ children, className }: NavbarProps) => {
   return (
     <motion.div
       ref={ref}
-      className={classnames("fixed inset-x-0 z-40 w-full top-10", { 'top-1': visible }, className)}
+      className={classnames(
+        "fixed inset-x-0 z-40 w-full top-10",
+        { "top-1": visible },
+        className,
+      )}
     >
       {React.Children.map(children, (child) =>
         React.isValidElement(child)
@@ -108,7 +112,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
       }}
       className={classnames(
         "relative z-[60] mx-auto hidden w-full max-w-7xl flex-row items-center justify-between self-start rounded-full bg-transparent px-4 py-1 lg:flex font-sans",
-        visible && "bg-backgroundBlue/50",
+        visible ? "bg-backgroundBlue/50" : "",
         className,
       )}
     >
@@ -124,7 +128,12 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
   );
 };
 
-export const NavItems = ({ items, className, onItemClick, visible }: NavItemsProps) => {
+export const NavItems = ({
+  items,
+  className,
+  onItemClick,
+  visible,
+}: NavItemsProps) => {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
@@ -132,7 +141,7 @@ export const NavItems = ({ items, className, onItemClick, visible }: NavItemsPro
       onMouseLeave={() => setHovered(null)}
       className={classnames(
         "absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium text-white transition duration-200 hover:text-backgroundBlue lg:flex lg:space-x-2",
-        { 'relative': visible },
+        { "relative ": visible },
         className,
       )}
     >
@@ -178,7 +187,7 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
       }}
       className={classnames(
         "relative z-50 mx-auto flex w-full max-w-[calc(100vw-2rem)] flex-col items-center justify-between bg-transparent px-0 py-2 lg:hidden",
-        visible && "bg-backgroundBlue/70",
+        visible ? "bg-backgroundBlue/70" : "",
         className,
       )}
     >
@@ -247,12 +256,7 @@ export const NavbarLogo = () => {
       href="#home"
       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
     >
-      <Image
-        src="/dj-logo.png"
-        alt="logo"
-        width={27}
-        height={25}
-      />
+      <Image src="/dj-logo.png" alt="logo" width={27} height={25} />
     </Link>
   );
 };
@@ -326,56 +330,58 @@ const Navbar = () => {
       icon: <MdChat />,
     },
   ];
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  return <div className="relative w-full">
-  <NavbarContainer>
-    {/* Desktop Navigation */}
-    <NavBody>
-      <NavbarLogo />
-      <NavItems items={navItems} />
-      <div className="flex items-center gap-4">
-        <NavbarButton variant="primary">Get in Touch</NavbarButton>
-      </div>
-    </NavBody>
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  return (
+    <div className="relative w-full">
+      <NavbarContainer>
+        {/* Desktop Navigation */}
+        <NavBody>
+          <NavbarLogo />
+          <NavItems items={navItems} />
+          <div className="flex items-center gap-4">
+            <NavbarButton variant="primary">Get in Touch</NavbarButton>
+          </div>
+        </NavBody>
 
-    {/* Mobile Navigation */}
-    <MobileNav>
-      <MobileNavHeader>
-        <NavbarLogo />
-        <MobileNavToggle
-          isOpen={isMobileMenuOpen}
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        />
-      </MobileNavHeader>
+        {/* Mobile Navigation */}
+        <MobileNav>
+          <MobileNavHeader>
+            <NavbarLogo />
+            <MobileNavToggle
+              isOpen={isMobileMenuOpen}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            />
+          </MobileNavHeader>
 
-      <MobileNavMenu
-        isOpen={isMobileMenuOpen}
-        onClose={() => setIsMobileMenuOpen(false)}
-      >
-        {navItems.map((item, idx) => (
-          <a
-            key={`mobile-link-${idx}`}
-            href={item.link}
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="relative text-white w-full flex justify-between items-center text-md"
+          <MobileNavMenu
+            isOpen={isMobileMenuOpen}
+            onClose={() => setIsMobileMenuOpen(false)}
           >
-            <span className="block">{item.name}</span>
-            { item.icon }
-          </a>
-        ))}
-        <div className="flex w-full flex-col gap-4">
-          <NavbarButton
-            onClick={() => setIsMobileMenuOpen(false)}
-            variant="primary"
-            className="w-full"
-          >
-            Get in Touch
-          </NavbarButton>
-        </div>
-      </MobileNavMenu>
-    </MobileNav>
-  </NavbarContainer>
-</div>
-}
+            {navItems.map((item, idx) => (
+              <a
+                key={`mobile-link-${idx}`}
+                href={item.link}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="relative text-white w-full flex justify-between items-center text-md"
+              >
+                <span className="block">{item.name}</span>
+                {item.icon}
+              </a>
+            ))}
+            <div className="flex w-full flex-col gap-4">
+              <NavbarButton
+                onClick={() => setIsMobileMenuOpen(false)}
+                variant="primary"
+                className="w-full"
+              >
+                Get in Touch
+              </NavbarButton>
+            </div>
+          </MobileNavMenu>
+        </MobileNav>
+      </NavbarContainer>
+    </div>
+  );
+};
 
 export default Navbar;
