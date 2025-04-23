@@ -15,6 +15,7 @@ interface BentoCardProps extends ComponentPropsWithoutRef<"div"> {
   description: string;
   href: string;
   cta: string;
+  linkType: string;
   bgClassName?: string;
 }
 
@@ -41,6 +42,7 @@ const BentoCard = ({
   href,
   cta,
   bgClassName,
+  linkType,
   ...props
 }: BentoCardProps) => (
   <div
@@ -55,7 +57,7 @@ const BentoCard = ({
   >
     <div className={bgClassName}>{background}</div>
     <div className="absolute bottom-0 pointer-events-none z-10 flex transform-gpu flex-col gap-1 p-6 transition-all duration-300 group-hover:-translate-y-8">
-      <Icon className="h-8 w-8 origin-left transform-gpu text-neutral-700 transition-all duration-300 ease-in-out group-hover:scale-75" />
+      <Icon className="h-8 w-8 origin-left transform-gpu text-neutral-700 transition-all duration-300 ease-in-out group-hover:scale-75 mb-2" />
       <h3 className="text-xl font-semibold text-neutral-700 dark:text-neutral-300">
         {name}
       </h3>
@@ -70,6 +72,7 @@ const BentoCard = ({
       <button className="pointer-events-auto">
         <a
           href={href}
+          target={linkType === "external" ? "_blank" : "_parent"}
           className="flex items-center hover:bg-slate-200 px-2 py-1 rounded-md text-sm"
         >
           {cta}

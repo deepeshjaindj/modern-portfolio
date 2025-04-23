@@ -1,32 +1,3 @@
-const SLUGS_FOR_TECH_CLOUD = [
-  "typescript",
-  "javascript",
-  "react",
-  "html5",
-  "css3",
-  "nodedotjs",
-  "express",
-  "nextdotjs",
-  "prisma",
-  "amazonaws",
-  "postgresql",
-  "firebase",
-  "vercel",
-  "jest",
-  "docker",
-  "git",
-  "jira",
-  "github",
-  "gitlab",
-  "visualstudiocode",
-  "sonarqube",
-  "figma",
-  "mongodb",
-  "strapi",
-  "netlify",
-  "tailwindcss",
-];
-
 const FIRST_CARD_ANIMATION_OFFERINGS = {
   initial: {
     x: 20,
@@ -105,7 +76,6 @@ const FILE_TREE_ELEMENTS = [
 ];
 
 export {
-  SLUGS_FOR_TECH_CLOUD,
   FIRST_CARD_ANIMATION_OFFERINGS,
   SECOND_CARD_ANIMATION_OFFERINGS,
   FILE_TREE_ELEMENTS,

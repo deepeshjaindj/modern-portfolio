@@ -15,6 +15,7 @@
   --font-serif: var(--font-poppins-serif);
   --font-sans: var(--font-outfit-sans);
   --font-display: var(--font-playfair-display);
+  --font-mono: var(--font-geist-mono);
 
   --animate-aurora: aurora 60s linear infinite;
 
