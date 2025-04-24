@@ -1,7 +1,15 @@
 "use client";
 
 import React from "react";
-import { BentoCard, BentoGrid, File, Folder, Tree, Globe } from "../atoms";
+import {
+  BentoCard,
+  BentoGrid,
+  File,
+  Folder,
+  Tree,
+  Globe,
+  OrbitingCircles,
+} from "../atoms";
 import { FaFigma } from "react-icons/fa";
 import { motion } from "motion/react";
 import {
@@ -15,6 +23,36 @@ import { GiNinjaHead } from "react-icons/gi";
 import { MdRocketLaunch } from "react-icons/md";
 import { AiOutlineApi } from "react-icons/ai";
 import { PiLego } from "react-icons/pi";
+import {
+  AWSIcon,
+  CSSIcon,
+  DockerIcon,
+  ES6Icon,
+  EsLintIcon,
+  ExpressJSIcon,
+  GithubIcon,
+  GitIcon,
+  GitLabIcon,
+  GraphQLIcon,
+  HTMLIcon,
+  JavaScriptIcon,
+  MUIIcon,
+  NextJSIcon,
+  NodeJSIcon,
+  NPMIcon,
+  PostgresIcon,
+  PostmanIcon,
+  ReactIcon,
+  ReactQueryIcon,
+  RedisIcon,
+  ReduxIcon,
+  StrapiIcon,
+  TailwindIcon,
+  TypeScriptIcon,
+  VercelIcon,
+  VsCodeIcon,
+} from "@/assets";
+import MongoDBIcon from "@/assets/MongoDBIcon";
 
 const Offerings = () => {
   const FEATURES = [
@@ -29,7 +67,44 @@ const Offerings = () => {
       linkType: "internal",
       background: (
         <div className="relative flex size-full items-center justify-center overflow-hidden">
-          TEST
+          <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden">
+            <OrbitingCircles iconSize={30}>
+              <GithubIcon />
+              <VsCodeIcon />
+              <EsLintIcon />
+              <ES6Icon />
+              <GitIcon />
+              <NPMIcon />
+              <DockerIcon />
+              <AWSIcon />
+              <GitLabIcon />
+              <VercelIcon />
+            </OrbitingCircles>
+            <OrbitingCircles iconSize={25} radius={100} reverse speed={2}>
+              <NodeJSIcon />
+              <ExpressJSIcon />
+              <MongoDBIcon />
+              <PostgresIcon />
+              <StrapiIcon />
+              <GraphQLIcon />
+              <RedisIcon />
+              <PostmanIcon />
+            </OrbitingCircles>
+            <OrbitingCircles iconSize={20} radius={60} speed={3}>
+              <ReactIcon />
+              <NextJSIcon />
+              <TailwindIcon />
+              <ReduxIcon />
+              <ReactQueryIcon />
+              <MUIIcon />
+            </OrbitingCircles>
+            <OrbitingCircles iconSize={15} radius={20} reverse speed={4}>
+              <HTMLIcon />
+              <CSSIcon />
+              <JavaScriptIcon />
+              <TypeScriptIcon />
+            </OrbitingCircles>
+          </div>
         </div>
       ),
     },
