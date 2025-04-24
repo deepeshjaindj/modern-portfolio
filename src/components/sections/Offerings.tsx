@@ -9,6 +9,7 @@ import {
   Tree,
   Globe,
   OrbitingCircles,
+  AuroraText,
 } from "../atoms";
 import { FaFigma } from "react-icons/fa";
 import { motion } from "motion/react";
@@ -180,10 +181,13 @@ const Offerings = () => {
       bgClassName: "h-[85%] p-2",
       background: (
         <div className="h-[100%] rounded-lg">
-          <div className="relative flex size-full items-start justify-center overflow-hidden rounded-lg border px-2 pb-40 pt-8 md:pb-60">
-            <span className="pointer-events-none whitespace-pre-wrap bg-clip-text text-center text-6xl font-semibold text-neutral-700 text-right">
+          <div className="relative flex size-full items-start justify-center overflow-hidden rounded-lg border px-2 pb-40 pt-8 md:pt-20 lg:pt-8 md:pb-60">
+            <AuroraText
+              className="pointer-events-none whitespace-pre-wrap bg-clip-text text-6xl font-semibold text-neutral-700 text-center lg:text-right w-full md:w-[70%] lg:w-full"
+              colors={["#242472", "#2313b4", "#1624a1", "#111dc4", "#202094"]}
+            >
               Available across time zones
-            </span>
+            </AuroraText>
             <Globe className="bottom-[-30%] w-[250%]" />
             <div className="pointer-events-none absolute inset-0 h-full bg-[radial-gradient(circle_at_50%_200%,rgba(0,0,0,0.2),rgba(255,255,255,0))]" />
           </div>

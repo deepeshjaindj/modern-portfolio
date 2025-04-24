@@ -3,7 +3,7 @@
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
-import { BackgroundBeamsCollide, FloatingDock, ShiningText } from "../atoms";
+import { AuroraText, BackgroundBeamsCollide, FloatingDock } from "../atoms";
 import {
   FaGithub,
   FaLinkedin,
@@ -47,7 +47,13 @@ const About = () => {
         >
           <h1 className="text-4xl sm:text-4xl md:text-5xl font-serif font-semibold leading-tight max-w-6xl">
             More Than Just Code –{" "}
-            <ShiningText variant="light">I Build Experiences</ShiningText>
+            <AuroraText
+              className="font-display italic font-bold"
+              colors={["#ce2094", "#7324daf8", "#e2258d"]}
+              speed={2}
+            >
+              I Build Experiences
+            </AuroraText>
           </h1>
           <h3 className="text-lg sm:text-xl md:text-2xl mt-2 text-gray-700">
             Driven by curiosity, focused on craft, and fueled by coffee &

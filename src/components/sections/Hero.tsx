@@ -2,7 +2,7 @@
 
 import { motion } from "motion/react";
 import type { NextPage } from "next";
-import { AuroraBackground, ShiningText } from "../atoms";
+import { AuroraBackground, AuroraText } from "../atoms";
 import Image from "next/image";
 import { FiExternalLink, FiMail } from "react-icons/fi";
 
@@ -44,7 +44,13 @@ const Hero: NextPage = () => {
             transition={{ delay: 0.3, duration: 0.8 }}
           >
             Crafting Scalable, Performant, and Future-Ready{" "}
-            <ShiningText variant="dark">Web Solutions</ShiningText>
+            <AuroraText
+              className="font-display italic"
+              colors={["#ff8800", "#ffea00f8", "#ffa600"]}
+              speed={2}
+            >
+              Web Solutions
+            </AuroraText>
           </motion.h1>
 
           {/* 💡 Engaging Subheading */}
