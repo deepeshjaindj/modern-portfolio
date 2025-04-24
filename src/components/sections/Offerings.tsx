@@ -249,7 +249,7 @@ const Offerings = () => {
   ];
 
   return (
-    <div className="min-h-dvh flex items-center justify-center bg-gradient-to-b from-primaryYellow/20 to-white pt-16 pb-8 font-sans">
+    <div className="min-h-dvh flex items-center justify-center bg-gradient-to-b from-primaryYellow/10 to-white pt-16 pb-8 font-sans">
       <BentoGrid className="w-full max-w-7xl px-4 sm:px-6 lg:px-10 xl:px-16">
         {FEATURES.map((feature, idx) => (
           <BentoCard

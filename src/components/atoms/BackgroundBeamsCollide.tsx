@@ -71,7 +71,7 @@ const BackgroundBeamsWithCollision = ({
     <div
       ref={parentRef}
       className={classnames(
-        "min-h-dvh bg-gradient-to-b from-white to-primaryYellow/20 relative flex items-center w-full justify-center overflow-hidden",
+        "min-h-dvh bg-gradient-to-b from-white to-primaryYellow/10 relative flex items-center w-full justify-center overflow-hidden",
         className,
       )}
     >

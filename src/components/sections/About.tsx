@@ -16,22 +16,22 @@ const About = () => {
     {
       title: "LinkedIn",
       icon: <FaLinkedin className="w-full h-full text-neutral-500" />,
-      href: "#",
+      href: "http://linkedin.com/in/deepeshjain-dj",
     },
     {
       title: "Github",
       icon: <FaGithub className="w-full h-full text-neutral-500" />,
-      href: "#",
+      href: "https://github.com/deepeshjaindj",
     },
     {
       title: "Stack Overflow",
       icon: <FaStackOverflow className="w-full h-full text-neutral-500" />,
-      href: "#",
+      href: "https://stackoverflow.com/users/14953697/deepesh-jain",
     },
     {
       title: "X aka Twitter",
       icon: <FaTwitter className="w-full h-full text-neutral-500" />,
-      href: "#",
+      href: "https://twitter.com/deepeshjaindj2",
     },
   ];
 
