@@ -63,7 +63,7 @@ const Offerings = () => {
       description: "From code to cloud, covered.",
       href: "#Tech",
       cta: "Tech Stack",
-      className: "col-span-3 lg:col-span-1",
+      className: "col-span-3 lg:col-span-1 order-1",
       bgClassName: "w-[120%] h-[80%] self-center opacity-50",
       linkType: "internal",
       background: (
@@ -115,7 +115,7 @@ const Offerings = () => {
       description: "Readable, scalable, and future-proof.",
       href: "https://github.com/deepeshjaindj",
       cta: "Github",
-      className: "col-span-3 lg:col-span-1",
+      className: "col-span-3 lg:col-span-1 order-2",
       linkType: "external",
       bgClassName: "font-mono h-[70%] px-6 py-4 opacity-75",
       background: (
@@ -176,7 +176,7 @@ const Offerings = () => {
       description: "Work syncs with your schedule.",
       href: "#contact",
       cta: "Let's Connect",
-      className: "col-span-3 lg:col-span-1 row-span-2",
+      className: "col-span-3 lg:col-span-1 row-span-2 order-4 lg:order-3",
       linkType: "internal",
       bgClassName: "h-[85%] p-2",
       background: (
@@ -198,7 +198,7 @@ const Offerings = () => {
       Icon: MdRocketLaunch,
       name: "Skills, Standards & Superpowers",
       description: "Engineering polished digital solutions.",
-      className: "col-span-3 lg:col-span-2",
+      className: "col-span-3 lg:col-span-2 order-3 lg:order-4",
       href: "#projects",
       cta: "Explore Projects",
       linkType: "internal",
