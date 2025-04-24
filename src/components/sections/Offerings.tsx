@@ -121,7 +121,7 @@ const Offerings = () => {
       description: "Engineering polished digital solutions.",
       className: "col-span-3 lg:col-span-2",
       href: "#projects",
-      cta: "Learn more",
+      cta: "Explore Projects",
       linkType: "internal",
       bgClassName: "h-[80%] p-4 opacity-75 hover:opacity-50",
       background: (
