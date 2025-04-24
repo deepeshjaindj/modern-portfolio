@@ -179,12 +179,12 @@ const Offerings = () => {
       linkType: "internal",
       bgClassName: "h-[85%] p-2",
       background: (
-        <div className="bg-yellow-100 h-[100%] rounded-lg">
-          <div className="relative flex size-full max-w-lg items-center justify-center overflow-hidden rounded-lg border bg-background px-40 pb-40 pt-8 md:pb-60">
-            <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-8xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10">
-              Globe
+        <div className="h-[100%] rounded-lg">
+          <div className="relative flex size-full items-start justify-center overflow-hidden rounded-lg border px-2 pb-40 pt-8 md:pb-60">
+            <span className="pointer-events-none whitespace-pre-wrap bg-clip-text text-center text-6xl font-semibold text-neutral-700 text-right">
+              Available across time zones
             </span>
-            <Globe className="top-28" />
+            <Globe className="bottom-[-30%] w-[250%]" />
             <div className="pointer-events-none absolute inset-0 h-full bg-[radial-gradient(circle_at_50%_200%,rgba(0,0,0,0.2),rgba(255,255,255,0))]" />
           </div>
         </div>
