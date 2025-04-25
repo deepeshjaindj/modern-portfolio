@@ -183,7 +183,7 @@ const Offerings = () => {
         <div className="h-[100%] rounded-lg">
           <div className="relative flex size-full items-start justify-center overflow-hidden rounded-lg border px-2 pb-40 pt-8 md:pt-20 lg:pt-8 md:pb-60">
             <AuroraText
-              className="pointer-events-none whitespace-pre-wrap bg-clip-text text-6xl font-semibold text-neutral-700 text-center lg:text-right w-full md:w-[70%] lg:w-full"
+              className="pointer-events-none whitespace-pre-wrap bg-clip-text text-5xl lg:text-6xl font-semibold text-neutral-700 text-center lg:text-right w-full md:w-[70%] lg:w-full"
               colors={["#242472", "#2313b4", "#1624a1", "#111dc4", "#202094"]}
             >
               Available across time zones
