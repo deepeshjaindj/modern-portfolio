@@ -105,7 +105,7 @@ const About = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7 }}
               viewport={{ once: true }}
-              className="flex-1 flex justify-end order-1 md:order-2"
+              className="flex-1 flex justify-end order-1 md:order-2 max-w-[280px] md:max-w-[100%]"
             >
               <Image
                 src="/deepesh-jain-crop.png"
