@@ -107,13 +107,13 @@ function IconContainer({
   const [hovered, setHovered] = useState(false);
 
   return (
-    <a href={href} target="_blank">
+    <a href={href} target="_blank" rel="noopener noreferrer">
       <motion.div
         ref={ref}
         style={{ width, height }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="relative flex aspect-square items-center justify-center rounded-full bg-gray-200"
+        className="relative flex aspect-square items-center justify-center rounded-full bg-neutral-200"
       >
         <AnimatePresence>
           {hovered && (
@@ -121,7 +121,7 @@ function IconContainer({
               initial={{ opacity: 0, y: 10, x: "-50%" }}
               animate={{ opacity: 1, y: 0, x: "-50%" }}
               exit={{ opacity: 0, y: 2, x: "-50%" }}
-              className="absolute -top-8 left-1/2 w-fit rounded-md border border-gray-200 bg-gray-100 px-2 py-0.5 text-xs whitespace-pre text-neutral-700"
+              className="absolute -top-8 left-1/2 w-fit rounded-md border border-neutral-200 bg-neutral-100 px-2 py-0.5 text-xs whitespace-pre text-neutral-700"
             >
               {title}
             </motion.div>

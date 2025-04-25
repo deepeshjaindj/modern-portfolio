@@ -36,7 +36,7 @@ const About = () => {
   ];
 
   return (
-    <div className="relative flex flex-col items-center justify-center min-h-dvh w-full bg-white text-slate-800">
+    <div className="relative flex flex-col items-center justify-center min-h-dvh w-full bg-white text-neutral-800">
       <BackgroundBeamsCollide>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -55,7 +55,7 @@ const About = () => {
               I Build Experiences
             </AuroraText>
           </h1>
-          <h3 className="text-lg sm:text-xl md:text-2xl mt-2 text-gray-700">
+          <h3 className="text-lg sm:text-xl md:text-2xl mt-2 text-neutral-600">
             Driven by curiosity, focused on craft, and fueled by coffee &
             creativity
           </h3>
@@ -69,7 +69,7 @@ const About = () => {
               viewport={{ once: true }}
               className="flex-1 text-left text-base md:text-lg leading-relaxed space-y-4 order-2 md:order-1"
             >
-              <h4 className="text-slate-600 font-bold text-sm tracking-wide text-center md:text-left">
+              <h4 className="text-neutral-500 font-bold text-sm tracking-wide text-center md:text-left">
                 KNOW ABOUT ME
               </h4>
               <p className="text-center md:text-left">
