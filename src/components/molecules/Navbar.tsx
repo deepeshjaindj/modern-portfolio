@@ -256,14 +256,14 @@ export const NavbarLogo = () => {
       href="#home"
       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
     >
-      <Image src="/dj-logo.png" alt="logo" width={27} height={25} />
+      <Image src="/dj-logo.png" alt="logo" width={32} height={32} />
     </Link>
   );
 };
 
 export const NavbarButton = ({
   href,
-  as: Tag = "a",
+  as: Tag = "button",
   children,
   className,
   variant = "primary",
