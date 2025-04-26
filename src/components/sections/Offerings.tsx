@@ -7,7 +7,6 @@ import {
   File,
   Folder,
   Tree,
-  Globe,
   OrbitingCircles,
   AuroraText,
 } from "../atoms";
@@ -54,6 +53,7 @@ import {
   VsCodeIcon,
 } from "@/assets";
 import MongoDBIcon from "@/assets/MongoDBIcon";
+import Image from "next/image";
 
 const Offerings = () => {
   const FEATURES = [
@@ -188,7 +188,14 @@ const Offerings = () => {
             >
               Available across time zones
             </AuroraText>
-            <Globe className="bottom-[-30%] w-[250%]" />
+            <div className="absolute mx-auto aspect-[1/1] w-[160%] bottom-[-25%] max-w-[550px]">
+              <Image
+                src={"/globe-img.png"}
+                width={600}
+                height={600}
+                alt="Globe"
+              />
+            </div>
             <div className="pointer-events-none absolute inset-0 h-full bg-[radial-gradient(circle_at_50%_200%,rgba(0,0,0,0.2),rgba(255,255,255,0))]" />
           </div>
         </div>

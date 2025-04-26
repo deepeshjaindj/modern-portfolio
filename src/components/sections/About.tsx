@@ -55,10 +55,10 @@ const About = () => {
               I Build Experiences
             </AuroraText>
           </h1>
-          <h3 className="text-lg sm:text-xl md:text-2xl mt-2 text-neutral-600">
+          <h2 className="text-lg sm:text-xl md:text-2xl mt-2 text-neutral-600">
             Driven by curiosity, focused on craft, and fueled by coffee &
             creativity
-          </h3>
+          </h2>
 
           <div className="mt-15 w-full flex flex-col md:flex-row gap-10 items-center">
             {/* Text Section */}

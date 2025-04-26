@@ -14,6 +14,7 @@ export { default as GraphQLIcon } from "./GraphQLIcon";
 export { default as HTMLIcon } from "./HTMLIcon";
 export { default as JavaScriptIcon } from "./JavaScriptIcon";
 export { default as KnexIcon } from "./KnexIcon";
+export { default as KsolvesIcon } from "./KsolvesIcon";
 export { default as KubernetesIcon } from "./KubernetesIcon";
 export { default as MUIIcon } from "./MUIIcon";
 export { default as MySQLIcon } from "./MySQLIcon";
