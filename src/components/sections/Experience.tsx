@@ -17,7 +17,7 @@ const Experience = () => {
           <h1 className="text-2xl md:text-3xl font-bold my-1 md:my-2">
             Software Engineer
           </h1>
-          <h2 className="flex text-sm md:text-md gap-2 items-center">
+          <h2 className="flex text-md gap-2 items-center">
             <KsolvesIcon className="w-5 h-5" />
             Ksolves India Limited
           </h2>
@@ -42,38 +42,17 @@ const Experience = () => {
             production-ready apps on platforms like Vercel and AWS.
           </p>
           <ul className="list-disc pl-6 space-y-3 mt-3 mb-5">
-            <li>
-              Built and optimized production-grade web apps using Next.js,
-              React.js, and TypeScript — enhancing page load speeds by up to
-              30%.
-            </li>
-            <li>
-              Integrated scalable backend APIs using Node.js and Express,
-              ensuring seamless data flow and authentication with JWT-based
-              security.
-            </li>
-            <li>
-              Refactored legacy monolithic codebases into modular,
-              component-driven architectures, reducing maintenance time by 25%.
-            </li>
-            <li>
-              Developed and consumed RESTful services with MongoDB and
-              PostgreSQL databases, following best practices for secure and
-              efficient data handling.
-            </li>
-            <li>
-              Led deployment processes on platforms like Vercel, Netlify, and
-              AWS, setting up CI/CD pipelines for faster releases.
-            </li>
-            <li>
-              Advocated for clean code practices, introducing ESLint and
-              Prettier standardization across frontend and backend projects.
-            </li>
-            <li>
-              Collaborated closely with cross-functional teams — designers,
-              testers, backend engineers — to deliver 100% client-approved
-              solutions within tight deadlines.
-            </li>
+            {[
+              "Built and optimized production-grade web apps using Next.js, React.js, and TypeScript — enhancing page load speeds by up to 30%.",
+              "Integrated scalable backend APIs using Node.js and Express, ensuring seamless data flow and authentication with JWT-based security.",
+              "Refactored legacy monolithic codebases into modular, component-driven architectures, reducing maintenance time by 25%.",
+              "Developed and consumed RESTful services with MongoDB and PostgreSQL databases, following best practices for secure and efficient data handling.",
+              "Led deployment processes on platforms like Vercel, Netlify, and AWS, setting up CI/CD pipelines for faster releases.",
+              "Advocated for clean code practices, introducing ESLint and Prettier standardization across frontend and backend projects.",
+              "Collaborated closely with cross-functional teams — designers, testers, backend engineers — to deliver 100% client-approved solutions within tight deadlines.",
+            ].map((item, idx) => (
+              <li key={idx}>{item}</li>
+            ))}
           </ul>
           <div className="grid grid-cols-2 gap-4">
             <Image
@@ -101,7 +80,7 @@ const Experience = () => {
           <h1 className="text-2xl md:text-3xl font-bold my-1 md:my-2">
             Software Developer - Intern
           </h1>
-          <h2 className="flex text-sm md:text-md gap-2 items-center">
+          <h2 className="flex text-md gap-2 items-center">
             <KsolvesIcon className="w-5 h-5" />
             Ksolves India Limited
           </h2>
@@ -122,31 +101,16 @@ const Experience = () => {
             practices.
           </p>
           <ul className="list-disc pl-6 space-y-3 mt-3 mb-5">
-            <li>
-              Designed and implemented responsive UIs with React.js and Tailwind
-              CSS, achieving pixel-perfect matches to Figma designs.
-            </li>
-            <li>
-              Worked hands-on with Redux for efficient state management and lazy
-              loading to boost mobile and desktop performance.
-            </li>
-            <li>
-              Integrated complex backend services via REST APIs, focusing on
-              robust error handling and user experience.
-            </li>
-            <li>
-              Actively contributed to backend tasks — creating CRUD APIs with
-              Express.js and managing server-side logic.
-            </li>
-            <li>
-              Deployed and maintained projects on Vercel, gaining experience in
-              serverless hosting and deployment workflows.
-            </li>
-            <li>
-              Collaborated with senior developers to fix bugs, optimize
-              codebases, and deliver client projects with more than 95% on-time
-              completion rate.
-            </li>
+            {[
+              "Designed and implemented responsive UIs with React.js and Tailwind CSS, achieving pixel-perfect matches to Figma designs.",
+              "Worked hands-on with Redux for efficient state management and lazy loading to boost mobile and desktop performance.",
+              "Integrated complex backend services via REST APIs, focusing on robust error handling and user experience.",
+              "Actively contributed to backend tasks — creating CRUD APIs with Express.js and managing server-side logic.",
+              "Deployed and maintained projects on Vercel, gaining experience in serverless hosting and deployment workflows.",
+              "Collaborated with senior developers to fix bugs, optimize codebases, and deliver client projects with more than 95% on-time completion rate.",
+            ].map((item, idx) => (
+              <li key={idx}>{item}</li>
+            ))}
           </ul>
           <div className="grid grid-cols-2 gap-4">
             <Image
@@ -170,7 +134,7 @@ const Experience = () => {
   ];
 
   return (
-    <div className="relative flex flex-col items-center justify-center min-h-dvh w-full bg-white text-neutral-800">
+    <div className="relative flex flex-col items-center justify-center min-h-dvh w-full text-neutral-800 pt-16">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
