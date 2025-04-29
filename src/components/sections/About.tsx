@@ -60,7 +60,7 @@ const About = () => {
             creativity
           </h2>
 
-          <div className="mt-15 w-full flex flex-col md:flex-row gap-10 items-center">
+          <div className="mt-15 w-full flex flex-col md:flex-row gap-10 items-center text-neutral-600">
             {/* Text Section */}
             <motion.div
               initial={{ opacity: 0, x: -40 }}

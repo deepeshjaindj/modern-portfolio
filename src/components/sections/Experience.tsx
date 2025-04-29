@@ -12,12 +12,12 @@ const Experience = () => {
   const data = [
     {
       title: (
-        <div className="text-neutral-700">
+        <div className="text-neutral-600">
           <span className="text-sm">JULY 2023 - PRESENT</span>
           <h1 className="text-2xl md:text-3xl font-bold my-1 md:my-2">
             Software Engineer
           </h1>
-          <h2 className="flex text-md gap-2 items-center">
+          <h2 className="flex text-sm md:text-md gap-2 items-center">
             <KsolvesIcon className="w-5 h-5" />
             Ksolves India Limited
           </h2>
@@ -30,7 +30,7 @@ const Experience = () => {
       ),
       className: "pt-10 md:pt-20",
       content: (
-        <div className="mb-8 text-md font-normal text-neutral-700">
+        <div className="mb-8 text-sm md:text-md lg:text-lg font-normal text-neutral-600">
           <p>
             At Ksolves India Ltd, I work as a Fullstack Developer with a strong
             frontend focus — building, optimizing, and scaling modern web
@@ -75,12 +75,12 @@ const Experience = () => {
     },
     {
       title: (
-        <div className="text-neutral-700">
+        <div className="text-neutral-600">
           <span className="text-sm">SEPTEMBER 2022 - JUNE 2023</span>
           <h1 className="text-2xl md:text-3xl font-bold my-1 md:my-2">
             Software Developer - Intern
           </h1>
-          <h2 className="flex text-md gap-2 items-center">
+          <h2 className="flex text-sm md:text-md gap-2 items-center">
             <KsolvesIcon className="w-5 h-5" />
             Ksolves India Limited
           </h2>
@@ -92,7 +92,7 @@ const Experience = () => {
         </div>
       ),
       content: (
-        <div className="mb-8 text-md font-normal text-neutral-700">
+        <div className="mb-8 text-sm md:text-md lg:text-lg font-normal text-neutral-600">
           <p>
             Joining Ksolves was where theory met real-world execution. I leveled
             up by working on real production apps — contributing to frontend
@@ -134,7 +134,7 @@ const Experience = () => {
   ];
 
   return (
-    <div className="relative flex flex-col items-center justify-center min-h-dvh w-full text-neutral-800 pt-16">
+    <div className="relative flex flex-col items-center justify-center min-h-dvh w-full text-neutral-800 pt-16 pb-12">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -153,7 +153,7 @@ const Experience = () => {
           </AuroraText>
         </h1>
         <h2 className="text-lg sm:text-xl md:text-2xl mt-2 text-neutral-600">
-          Solving problems, scaling solutions.
+          Solving problems, scaling solutions
         </h2>
       </motion.div>
       <Timeline data={data} />
