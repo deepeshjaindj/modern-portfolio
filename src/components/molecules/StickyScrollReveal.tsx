@@ -199,11 +199,12 @@ export const StickyScroll = ({ content }: StickyScrollProps) => {
           <ProjectDetails key={index} item={item} index={index} />
         ))}
       </div>
+
       <div className="md:hidden">
         {content.map((item, index) => (
           <div key={index} className="mb-20 px-4">
-            <ImageCard key={index} item={item} />
-            <ProjectDetails key={index} item={item} index={index} mobile />
+            <ImageCard item={item} />
+            <ProjectDetails item={item} index={index} mobile />
           </div>
         ))}
       </div>
