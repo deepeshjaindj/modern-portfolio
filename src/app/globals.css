@@ -170,4 +170,11 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  .tag-container {
+    svg {
+      height: 24px !important;
+      width: 24px !important;
+    }
+  }
 }
