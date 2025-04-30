@@ -134,7 +134,7 @@ const Experience = () => {
   ];
 
   return (
-    <div className="relative flex flex-col items-center justify-center min-h-dvh w-full text-neutral-800 pt-16 pb-12">
+    <section className="relative flex flex-col items-center justify-center min-h-dvh w-full text-neutral-800 pt-16 pb-12 bg-[url('/cubes.png')]">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -157,7 +157,7 @@ const Experience = () => {
         </h2>
       </motion.div>
       <Timeline data={data} />
-    </div>
+    </section>
   );
 };
 

@@ -36,7 +36,7 @@ const About = () => {
   ];
 
   return (
-    <div className="relative flex flex-col items-center justify-center min-h-dvh w-full bg-white text-neutral-800">
+    <section className="relative flex flex-col items-center justify-center min-h-dvh w-full bg-white text-neutral-800">
       <BackgroundBeamsCollide>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -118,7 +118,7 @@ const About = () => {
           </div>
         </motion.div>
       </BackgroundBeamsCollide>
-    </div>
+    </section>
   );
 };
 
