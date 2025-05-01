@@ -1,6 +1,8 @@
 import {
   About,
+  Contact,
   Experience,
+  Footer,
   Hero,
   Offerings,
   Projects,
@@ -17,6 +19,8 @@ const Home: NextPage = () => {
       <Experience />
       <Projects />
       <TechStack />
+      <Contact />
+      <Footer />
     </>
   );
 };

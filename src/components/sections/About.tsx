@@ -4,12 +4,8 @@ import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
 import { AuroraText, BackgroundBeamsCollide, FloatingDock } from "../atoms";
-import {
-  FaGithub,
-  FaLinkedin,
-  FaStackOverflow,
-  FaTwitter,
-} from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaStackOverflow } from "react-icons/fa";
+import { SiX } from "react-icons/si";
 
 const About = () => {
   const links = [
@@ -29,8 +25,8 @@ const About = () => {
       href: "https://stackoverflow.com/users/14953697/deepesh-jain",
     },
     {
-      title: "X aka Twitter",
-      icon: <FaTwitter className="w-full h-full text-neutral-500" />,
+      title: "X",
+      icon: <SiX className="w-full h-full text-neutral-500" />,
       href: "https://twitter.com/deepeshjaindj2",
     },
   ];
