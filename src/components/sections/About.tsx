@@ -4,33 +4,9 @@ import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
 import { AuroraText, BackgroundBeamsCollide, FloatingDock } from "../atoms";
-import { FaGithub, FaLinkedin, FaStackOverflow } from "react-icons/fa";
-import { SiX } from "react-icons/si";
+import { SOCIAL_LINKS } from "@/utils/constants";
 
 const About = () => {
-  const links = [
-    {
-      title: "LinkedIn",
-      icon: <FaLinkedin className="w-full h-full text-neutral-500" />,
-      href: "http://linkedin.com/in/deepeshjain-dj",
-    },
-    {
-      title: "Github",
-      icon: <FaGithub className="w-full h-full text-neutral-500" />,
-      href: "https://github.com/deepeshjaindj",
-    },
-    {
-      title: "Stack Overflow",
-      icon: <FaStackOverflow className="w-full h-full text-neutral-500" />,
-      href: "https://stackoverflow.com/users/14953697/deepesh-jain",
-    },
-    {
-      title: "X",
-      icon: <SiX className="w-full h-full text-neutral-500" />,
-      href: "https://twitter.com/deepeshjaindj2",
-    },
-  ];
-
   return (
     <section
       id="about"
@@ -95,7 +71,10 @@ const About = () => {
                 Let’s build something that isn’t just functional — but
                 unforgettable. 🚀
               </p>
-              <FloatingDock mobileClassName="translate-y-20" items={links} />
+              <FloatingDock
+                mobileClassName="translate-y-20"
+                items={SOCIAL_LINKS}
+              />
             </motion.div>
 
             {/* Image Section */}

@@ -1,31 +1,9 @@
 import React from "react";
 import Link from "next/link";
-import { SiGithub, SiLinkedin, SiStackoverflow, SiX } from "react-icons/si";
 import { HiMail } from "react-icons/hi";
+import { SOCIAL_LINKS } from "@/utils/constants";
 
 const Footer = () => {
-  const socialLinks = [
-    {
-      href: "http://linkedin.com/in/deepeshjain-dj",
-      label: "LinkedIn",
-      icon: <SiLinkedin />,
-    },
-    {
-      href: "https://github.com/deepeshjaindj",
-      label: "GitHub",
-      icon: <SiGithub />,
-    },
-    {
-      href: "https://stackoverflow.com/users/14953697/deepesh-jain",
-      label: "Stack Overflow",
-      icon: <SiStackoverflow />,
-    },
-    {
-      href: "https://twitter.com/deepeshjaindj2",
-      label: "Twitter",
-      icon: <SiX />,
-    },
-  ];
   return (
     <footer className="relative flex flex-col items-center justify-center w-full bg-backgroundBlue text-neutral-300 font-sans px-4 sm:px-6 lg:px-10 xl:px-16">
       <div className="mx-auto h-px w-full bg-gradient-to-r from-white/50 via-white/80 to-white/50" />
@@ -38,7 +16,7 @@ const Footer = () => {
             effortlessly — front to back.
           </p>
           <div className="mt-4 flex gap-4 justify-center md:justify-start">
-            {socialLinks.map(({ href, label, icon }) => (
+            {SOCIAL_LINKS.map(({ href, label, icon }) => (
               <a
                 key={label}
                 href={href}
@@ -73,7 +51,7 @@ const Footer = () => {
           <div>
             <h3 className="text-sm font-medium text-white">Quick Links</h3>
             <ul className="mt-4 flex flex-col gap-y-3 text-sm">
-              {socialLinks.map((item, i) => (
+              {SOCIAL_LINKS.map((item, i) => (
                 <li key={i}>
                   <Link
                     target="_blank"

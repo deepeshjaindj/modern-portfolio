@@ -14,7 +14,7 @@ const FloatingDock = ({
   items,
   desktopClassName,
 }: {
-  items: { title: string; icon: React.ReactNode; href: string }[];
+  items: { label: string; icon: React.ReactNode; href: string }[];
   desktopClassName?: string;
   mobileClassName?: string;
 }) => {
@@ -29,7 +29,7 @@ const FloatingDockDesktop = ({
   items,
   className,
 }: {
-  items: { title: string; icon: React.ReactNode; href: string }[];
+  items: { label: string; icon: React.ReactNode; href: string }[];
   className?: string;
 }) => {
   const mouseX = useMotionValue(Infinity);
@@ -43,7 +43,7 @@ const FloatingDockDesktop = ({
       )}
     >
       {items.map((item) => (
-        <IconContainer mouseX={mouseX} key={item.title} {...item} />
+        <IconContainer mouseX={mouseX} key={item.label} {...item} />
       ))}
     </motion.div>
   );
@@ -51,12 +51,12 @@ const FloatingDockDesktop = ({
 
 function IconContainer({
   mouseX,
-  title,
+  label,
   icon,
   href,
 }: {
   mouseX: MotionValue;
-  title: string;
+  label: string;
   icon: React.ReactNode;
   href: string;
 }) {
@@ -123,7 +123,7 @@ function IconContainer({
               exit={{ opacity: 0, y: 2, x: "-50%" }}
               className="absolute -top-8 left-1/2 w-fit rounded-md border border-neutral-200 bg-neutral-100 px-2 py-0.5 text-xs whitespace-pre text-neutral-600"
             >
-              {title}
+              {label}
             </motion.div>
           )}
         </AnimatePresence>

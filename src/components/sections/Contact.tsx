@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa";
-import { SiLinkedin, SiGithub, SiStackoverflow, SiX } from "react-icons/si";
+import { SOCIAL_LINKS } from "@/utils/constants";
 
 const Contact = () => {
   return (
@@ -63,28 +63,7 @@ const Contact = () => {
         </p>
         <div className="mt-8 flex gap-10 justify-center text-xl md:text-3xl">
           {/* Social links */}
-          {[
-            {
-              href: "http://linkedin.com/in/deepeshjain-dj",
-              label: "LinkedIn",
-              icon: <SiLinkedin />,
-            },
-            {
-              href: "https://github.com/deepeshjaindj",
-              label: "GitHub",
-              icon: <SiGithub />,
-            },
-            {
-              href: "https://stackoverflow.com/users/14953697/deepesh-jain",
-              label: "Stack Overflow",
-              icon: <SiStackoverflow />,
-            },
-            {
-              href: "https://twitter.com/deepeshjaindj2",
-              label: "Twitter",
-              icon: <SiX />,
-            },
-          ].map(({ href, label, icon }) => (
+          {SOCIAL_LINKS.map(({ href, label, icon }) => (
             <a
               key={label}
               href={href}
