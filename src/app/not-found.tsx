@@ -1,32 +1,13 @@
 "use client";
 
-import { motion, useMotionValue, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 export default function NotFound() {
-  const [mounted, setMounted] = useState(false);
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
   useEffect(() => {
     document.getElementById("navbar")?.classList.add("hidden");
   });
-
-  useEffect(() => {
-    setMounted(true);
-    const handleMouseMove = (e: MouseEvent) => {
-      mouseX.set(e.clientX);
-      mouseY.set(e.clientY);
-    };
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, [mouseX, mouseY]);
-
-  const rotateX = useTransform(mouseY, [0, window.innerHeight], [15, -15]);
-  const rotateY = useTransform(mouseX, [0, window.innerWidth], [-15, 15]);
-
-  if (!mounted) return null;
 
   return (
     <div className="relative flex min-h-screen w-full items-center justify-center bg-backgroundBlue text-neutral-200 overflow-hidden">
@@ -56,15 +37,12 @@ export default function NotFound() {
       </div>
 
       {/* Main content */}
-      <motion.div
-        className="z-10 flex flex-col items-center text-center"
-        style={{ rotateX, rotateY }}
-      >
+      <motion.div className="z-10 flex flex-col items-center text-center">
         <motion.h1
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.3, duration: 0.6 }}
-          className="text-7xl font-extrabold text-white"
+          className="text-7xl font-extrabold text-white hover:scale-120"
         >
           404
         </motion.h1>

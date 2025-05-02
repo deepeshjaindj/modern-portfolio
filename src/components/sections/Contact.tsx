@@ -8,7 +8,10 @@ import { SiLinkedin, SiGithub, SiStackoverflow, SiX } from "react-icons/si";
 
 const Contact = () => {
   return (
-    <section className="relative flex flex-col items-center justify-center min-h-dvh w-full text-neutral-800 pt-16 bg-[url('/skybg.jpg')] bg-cover">
+    <section
+      id="contact"
+      className="relative flex flex-col items-center justify-center min-h-dvh w-full text-neutral-800 pt-16 bg-[url('/skybg.jpg')] bg-cover"
+    >
       <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col items-center justify-center gap-y-2 text-center font-sans px-4 sm:px-6 lg:px-10 xl:px-16 mb-16">
         <div className="relative mb-4">
           <Image

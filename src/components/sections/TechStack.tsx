@@ -105,7 +105,10 @@ const categories = [
 
 const TechStack = () => {
   return (
-    <section className="relative flex flex-col items-center justify-center min-h-dvh w-full text-neutral-800 pt-16 pb-12 bg-[url('/square.png')]">
+    <section
+      id="skills"
+      className="relative flex flex-col items-center justify-center min-h-dvh w-full text-neutral-800 pt-16 pb-12 bg-[url('/square.png')]"
+    >
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}

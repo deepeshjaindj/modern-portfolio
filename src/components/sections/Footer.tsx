@@ -58,18 +58,16 @@ const Footer = () => {
           <div>
             <h3 className="text-sm font-medium text-white">General</h3>
             <ul className="mt-4 flex flex-col gap-y-3 text-sm">
-              {["Home", "About", "Experience", "Projects", "Skills"].map(
-                (text, i) => (
-                  <li key={i}>
-                    <Link
-                      href={`/${text === "Home" ? "" : text.toLowerCase()}`}
-                      className="transition-colors hover:text-neutral-50"
-                    >
-                      {text}
-                    </Link>
-                  </li>
-                ),
-              )}
+              {["Home", "About", "Experience", "Projects"].map((text, i) => (
+                <li key={i}>
+                  <Link
+                    href={`/${text === "Home" ? "" : "#" + text.toLowerCase()}`}
+                    className="transition-colors hover:text-neutral-50"
+                  >
+                    {text}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
           <div>

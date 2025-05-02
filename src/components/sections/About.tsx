@@ -32,7 +32,10 @@ const About = () => {
   ];
 
   return (
-    <section className="relative flex flex-col items-center justify-center min-h-dvh w-full bg-white text-neutral-800">
+    <section
+      id="about"
+      className="relative flex flex-col items-center justify-center min-h-dvh w-full bg-white text-neutral-800"
+    >
       <BackgroundBeamsCollide>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
