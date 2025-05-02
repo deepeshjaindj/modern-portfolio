@@ -1,4 +1,5 @@
 "use client";
+
 import {
   motion,
   AnimatePresence,
@@ -332,7 +333,7 @@ const Navbar = () => {
   ];
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   return (
-    <div className="relative w-full">
+    <div id="navbar" className="relative w-full">
       <NavbarContainer>
         {/* Desktop Navigation */}
         <NavBody>
