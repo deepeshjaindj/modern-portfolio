@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+**Portfolio**
+=========================
 
-## Getting Started
+**A Passionate Software Engineer Crafting Interactive Web Experiences**
+-------------------------------------------------------------------
 
-First, run the development server:
+[![Deepesh Jain](https://img.shields.io/badge/Author-Deepesh%20Jain-blue)](https://deepeshjain.vercel.app/)
+[![License](https://img.shields.io/badge/License-MIT-green)](https://opensource.org/licenses/MIT)
+[![Version](https://img.shields.io/badge/Version-1.0.0-orange)](https://github.com/deepeshjaindj/modern-portfolio-fe/releases)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**Table of Contents**
+-----------------
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. [Introduction](#introduction)
+2. [Features](#features)
+3. [Getting Started](#getting-started)
+4. [Tech Stack](#tech-stack)
+5. [License](#license)
+6. [Contributing](#contributing)
+7. [Author](#author)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**Introduction**
+---------------
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Welcome to my modern portfolio website, built with Next.js, TailwindCSS, and Framer Motion. This project showcases my skills and experience as a software engineer, with a focus on creating interactive and visually appealing web experiences.
 
-## Learn More
+**Features**
+------------
 
-To learn more about Next.js, take a look at the following resources:
+* **Interactive Project Showcase**: Explore my projects in a interactive and immersive way
+* **Smooth Animations**: Framer Motion powered animations for a seamless user experience
+* **Responsive Design**: Optimized for desktop, tablet, and mobile devices
+* **Accessibility**: Semantic HTML structure and optimal lighthouse scores
+* **CI/CD Integration**: Automated deployment and preview on Vercel
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Getting Started**
+-------------------
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Installation
 
-## Deploy on Vercel
+1. Clone the repository: `git clone https://github.com/deepeshjaindj/modern-portfolio-fe.git`
+2. Install dependencies: `npm install` or `yarn install`
+3. Start the development server: `npm run dev` or `yarn dev`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Build the project: `npm run build` or `yarn build`
+2. Deploy on Vercel: `npm run deploy` or `yarn deploy`
+
+**Tech Stack**
+-------------
+
+* **Next.js**: React-based framework for building server-rendered and statically generated websites
+* **TailwindCSS**: Utility-first CSS framework for rapid development
+* **Framer Motion**: Animation library for React
+* **TypeScript**: Superset of JavaScript for type safety and maintainability
+
+**License**
+----------
+
+This project is licensed under the MIT License. See [LICENSE](https://opensource.org/licenses/MIT) for more information.
+
+**Contributing**
+--------------
+
+Contributions are welcome! Please submit a pull request or issue on the [GitHub repository](https://github.com/deepeshjaindj/modern-portfolio-fe).
+
+**Author**
+----------
+
+Deepesh Jain - [deepeshjain.vercel.app](https://deepeshjain.vercel.app/)
+
+[![Twitter](https://img.shields.io/badge/Twitter-@deepeshjaindj2-blue)](https://twitter.com/deepeshjaindj2)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-@deepeshjain-dj-blue)](https://linkedin.com/in/deepeshjain-dj)
+[![GitHub](https://img.shields.io/badge/GitHub-@deepeshjaindj-blue)](https://github.com/deepeshjaindj)
