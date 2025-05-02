@@ -4,6 +4,28 @@ import { SiGithub, SiLinkedin, SiStackoverflow, SiX } from "react-icons/si";
 import { HiMail } from "react-icons/hi";
 
 const Footer = () => {
+  const socialLinks = [
+    {
+      href: "http://linkedin.com/in/deepeshjain-dj",
+      label: "LinkedIn",
+      icon: <SiLinkedin />,
+    },
+    {
+      href: "https://github.com/deepeshjaindj",
+      label: "GitHub",
+      icon: <SiGithub />,
+    },
+    {
+      href: "https://stackoverflow.com/users/14953697/deepesh-jain",
+      label: "Stack Overflow",
+      icon: <SiStackoverflow />,
+    },
+    {
+      href: "https://twitter.com/deepeshjaindj2",
+      label: "Twitter",
+      icon: <SiX />,
+    },
+  ];
   return (
     <footer className="relative flex flex-col items-center justify-center w-full bg-backgroundBlue text-neutral-300 font-sans px-4 sm:px-6 lg:px-10 xl:px-16">
       <div className="mx-auto h-px w-full bg-gradient-to-r from-white/50 via-white/80 to-white/50" />
@@ -16,29 +38,7 @@ const Footer = () => {
             effortlessly — front to back.
           </p>
           <div className="mt-4 flex gap-4 justify-center md:justify-start">
-            {/* Social links */}
-            {[
-              {
-                href: "http://linkedin.com/in/deepeshjain-dj",
-                label: "LinkedIn",
-                icon: <SiLinkedin />,
-              },
-              {
-                href: "https://github.com/deepeshjaindj",
-                label: "GitHub",
-                icon: <SiGithub />,
-              },
-              {
-                href: "https://stackoverflow.com/users/14953697/deepesh-jain",
-                label: "Stack Overflow",
-                icon: <SiStackoverflow />,
-              },
-              {
-                href: "https://twitter.com/deepeshjaindj2",
-                label: "Twitter",
-                icon: <SiX />,
-              },
-            ].map(({ href, label, icon }) => (
+            {socialLinks.map(({ href, label, icon }) => (
               <a
                 key={label}
                 href={href}
@@ -62,7 +62,7 @@ const Footer = () => {
                 <li key={i}>
                   <Link
                     href={`/${text === "Home" ? "" : "#" + text.toLowerCase()}`}
-                    className="transition-colors hover:text-neutral-50"
+                    className="transition-colors hover:text-primaryYellow"
                   >
                     {text}
                   </Link>
@@ -73,13 +73,15 @@ const Footer = () => {
           <div>
             <h3 className="text-sm font-medium text-white">Quick Links</h3>
             <ul className="mt-4 flex flex-col gap-y-3 text-sm">
-              {["Blog", "Drop a Mail"].map((text, i) => (
+              {socialLinks.map((item, i) => (
                 <li key={i}>
                   <Link
-                    href={`/${text.toLowerCase().replace(/ /g, "-")}`}
-                    className="transition-colors hover:text-neutral-50"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={item.href}
+                    className="transition-colors hover:text-primaryYellow"
                   >
-                    {text}
+                    {item.label}
                   </Link>
                 </li>
               ))}
