@@ -1,4 +1,10 @@
-import { SiLinkedin, SiGithub, SiStackoverflow, SiX } from "react-icons/si";
+import {
+  SiLinkedin,
+  SiGithub,
+  SiStackoverflow,
+  SiX,
+  SiWhatsapp,
+} from "react-icons/si";
 
 const FIRST_CARD_ANIMATION_OFFERINGS = {
   initial: {
@@ -97,6 +103,11 @@ const SOCIAL_LINKS = [
     href: "https://twitter.com/deepeshjaindj2",
     label: "Twitter",
     icon: <SiX />,
+  },
+  {
+    href: "https://wa.me/918120183005",
+    label: "Whatsapp",
+    icon: <SiWhatsapp />,
   },
 ];
 
