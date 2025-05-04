@@ -4,10 +4,10 @@ import type { NextPage } from "next";
 import { AuroraBackground, AuroraText } from "../atoms";
 import Image from "next/image";
 import { FiExternalLink, FiMail } from "react-icons/fi";
-import Link from "next/link";
 import { useState } from "react";
 import Modal from "../molecules/Modal";
 import { ContactForm } from "../molecules";
+import toast from "react-hot-toast";
 
 const Hero: NextPage = () => {
   const [isContactFormOpen, setIssContactFormOpen] = useState(false);
@@ -82,11 +82,11 @@ const Hero: NextPage = () => {
               </div>
             </button>
 
-            <Link
+            <button
               className="relative flex items-center justify-center px-6 py-3 text-lg text-white bg-transparent border border-white/50
                         rounded-full shadow-lg hover:bg-gradient-to-r hover:from-purple-500 hover:to-blue-500 
                         transition-all duration-500 group overflow-hidden font-sans mt-4"
-              href="/"
+              onClick={() => toast.success("Blog is Coming Soon!")}
             >
               {/* Button Text */}
               <span className="relative z-10">Read Blog</span>
@@ -94,7 +94,7 @@ const Hero: NextPage = () => {
               <div className="ml-3 relative z-10">
                 <FiExternalLink className="text-xl text-white" />
               </div>
-            </Link>
+            </button>
           </div>
         </div>
       </div>
