@@ -308,7 +308,7 @@ export const NavbarButton = ({
 const navItems = [
   {
     name: "Home",
-    link: "#home",
+    link: "/",
     icon: <FaHome />,
   },
   {
