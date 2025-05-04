@@ -8,6 +8,8 @@ import {
 import "./globals.css";
 import { Navbar } from "@/components/molecules";
 import Head from "next/head";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const poppinsSerif = Poppins({
   variable: "--font-poppins-serif",
@@ -108,6 +110,8 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
