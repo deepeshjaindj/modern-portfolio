@@ -380,7 +380,7 @@ const Navbar = () => {
             ))}
             <div className="flex w-full flex-col gap-4">
               <NavbarButton
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => setIssContactFormOpen(true)}
                 variant="primary"
                 className="w-full"
               >

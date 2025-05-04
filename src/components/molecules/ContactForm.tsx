@@ -100,7 +100,7 @@ const ContactForm = ({ handleClose }: ContactFormProps) => {
       onClick={handleClose}
     >
       <div
-        className="relative px-6 py-12 bg-neutral-900/60 w-full max-w-xl border border-neutral-700 rounded-2xl backdrop-blur shadow-lg h-fit m-auto"
+        className="relative px-6 py-12 bg-neutral-900/60 w-full max-w-xl border border-neutral-700 rounded-2xl backdrop-blur shadow-lg h-fit m-auto mx-6 md:mx-8"
         onClick={(e) => e.stopPropagation()} // prevent outside click
       >
         <div
