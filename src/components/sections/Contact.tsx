@@ -1,12 +1,16 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa";
 import { SOCIAL_LINKS } from "@/utils/constants";
+import Modal from "../molecules/Modal";
+import { ContactForm } from "../molecules";
 
 const Contact = () => {
+  const [isContactFormOpen, setIssContactFormOpen] = useState(false);
+
   return (
     <section
       id="contact"
@@ -43,9 +47,12 @@ const Contact = () => {
           transition={{ type: "spring", stiffness: 300 }}
           className="my-10 group relative inline-flex cursor-pointer items-center justify-between overflow-hidden rounded-full border border-white/10 bg-white/10 py-[3px] pr-[3px] pl-2 text-base font-medium opacity-85 backdrop-blur-xs hover:bg-transparent md:py-1 md:pr-1 md:pl-3"
         >
-          <span className="z-10 px-3 text-white transition-colors duration-300 group-hover:text-black">
+          <button
+            className="z-10 px-3 text-white transition-colors duration-300 group-hover:text-black cursor-pointer"
+            onClick={() => setIssContactFormOpen(true)}
+          >
             Get In Touch
-          </span>
+          </button>
           <span className="absolute inset-0 translate-x-[45%] scale-0 rounded-full bg-white opacity-0 transition-all duration-300 ease-in-out group-hover:translate-x-0 group-hover:scale-100 group-hover:opacity-100"></span>
           <span className="z-10 flex items-center justify-center overflow-hidden rounded-full bg-white p-2 transition-colors duration-300 group-hover:bg-transparent md:p-2.5">
             <FaArrowRight className="text-black transition-all duration-300 group-hover:translate-x-5 group-hover:opacity-0" />
@@ -83,6 +90,14 @@ const Contact = () => {
         aria-hidden="true"
         className="absolute inset-0 z-0 bg-backgroundBlue opacity-75"
       />
+
+      {/* Contact Modal */}
+      <Modal
+        isOpen={isContactFormOpen}
+        onClose={() => setIssContactFormOpen(false)}
+      >
+        <ContactForm handleClose={() => setIssContactFormOpen(false)} />
+      </Modal>
     </section>
   );
 };

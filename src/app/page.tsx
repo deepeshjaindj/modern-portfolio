@@ -9,6 +9,7 @@ import {
   TechStack,
 } from "@/components/sections";
 import type { NextPage } from "next";
+import { Toaster } from "react-hot-toast";
 
 const Home: NextPage = () => {
   return (
@@ -21,6 +22,8 @@ const Home: NextPage = () => {
       <TechStack />
       <Contact />
       <Footer />
+      {/* Toaster */}
+      <Toaster />
     </>
   );
 };

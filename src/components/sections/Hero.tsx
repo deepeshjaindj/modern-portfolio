@@ -4,8 +4,14 @@ import type { NextPage } from "next";
 import { AuroraBackground, AuroraText } from "../atoms";
 import Image from "next/image";
 import { FiExternalLink, FiMail } from "react-icons/fi";
+import Link from "next/link";
+import { useState } from "react";
+import Modal from "../molecules/Modal";
+import { ContactForm } from "../molecules";
 
 const Hero: NextPage = () => {
+  const [isContactFormOpen, setIssContactFormOpen] = useState(false);
+
   return (
     <AuroraBackground>
       <div
@@ -65,7 +71,8 @@ const Hero: NextPage = () => {
               className="relative flex items-center justify-center px-6 py-3 text-lg text-white 
                         rounded-full shadow-lg bg-gradient-to-r from-blue-500 to-purple-500 
                         hover:from-purple-500 hover:to-blue-500 transition-all duration-500 
-                        group overflow-hidden font-sans mt-4"
+                        group overflow-hidden font-sans mt-4 cursor-pointer"
+              onClick={() => setIssContactFormOpen(true)}
             >
               {/* Button Text */}
               <span className="relative z-10">Let&apos;s Connect</span>
@@ -75,10 +82,11 @@ const Hero: NextPage = () => {
               </div>
             </button>
 
-            <button
+            <Link
               className="relative flex items-center justify-center px-6 py-3 text-lg text-white bg-transparent border border-white/50
                         rounded-full shadow-lg hover:bg-gradient-to-r hover:from-purple-500 hover:to-blue-500 
                         transition-all duration-500 group overflow-hidden font-sans mt-4"
+              href="/"
             >
               {/* Button Text */}
               <span className="relative z-10">Read Blog</span>
@@ -86,10 +94,18 @@ const Hero: NextPage = () => {
               <div className="ml-3 relative z-10">
                 <FiExternalLink className="text-xl text-white" />
               </div>
-            </button>
+            </Link>
           </div>
         </div>
       </div>
+
+      {/* Contact Modal */}
+      <Modal
+        isOpen={isContactFormOpen}
+        onClose={() => setIssContactFormOpen(false)}
+      >
+        <ContactForm handleClose={() => setIssContactFormOpen(false)} />
+      </Modal>
     </AuroraBackground>
   );
 };

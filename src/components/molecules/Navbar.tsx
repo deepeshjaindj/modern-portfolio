@@ -15,6 +15,8 @@ import { BiMenu } from "react-icons/bi";
 import { FaCode, FaHome } from "react-icons/fa";
 import { FaUserSecret } from "react-icons/fa6";
 import { MdChat, MdWavingHand, MdWork } from "react-icons/md";
+import Modal from "./Modal";
+import ContactForm from "./ContactForm";
 
 interface NavbarProps {
   children: React.ReactNode;
@@ -303,35 +305,37 @@ export const NavbarButton = ({
   );
 };
 
+const navItems = [
+  {
+    name: "Home",
+    link: "#home",
+    icon: <FaHome />,
+  },
+  {
+    name: "About",
+    link: "#about",
+    icon: <FaUserSecret />,
+  },
+  {
+    name: "Experience",
+    link: "#experience",
+    icon: <MdWork />,
+  },
+  {
+    name: "Projects",
+    link: "#projects",
+    icon: <FaCode />,
+  },
+  {
+    name: "Contact",
+    link: "#contact",
+    icon: <MdChat />,
+  },
+];
+
 const Navbar = () => {
-  const navItems = [
-    {
-      name: "Home",
-      link: "#home",
-      icon: <FaHome />,
-    },
-    {
-      name: "About",
-      link: "#about",
-      icon: <FaUserSecret />,
-    },
-    {
-      name: "Experience",
-      link: "#experience",
-      icon: <MdWork />,
-    },
-    {
-      name: "Projects",
-      link: "#projects",
-      icon: <FaCode />,
-    },
-    {
-      name: "Contact",
-      link: "#contact",
-      icon: <MdChat />,
-    },
-  ];
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isContactFormOpen, setIssContactFormOpen] = useState(false);
   return (
     <div id="navbar" className="relative w-full">
       <NavbarContainer>
@@ -340,7 +344,12 @@ const Navbar = () => {
           <NavbarLogo />
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
-            <NavbarButton variant="primary">Get in Touch</NavbarButton>
+            <NavbarButton
+              variant="primary"
+              onClick={() => setIssContactFormOpen(true)}
+            >
+              Get in Touch
+            </NavbarButton>
           </div>
         </NavBody>
 
@@ -381,6 +390,14 @@ const Navbar = () => {
           </MobileNavMenu>
         </MobileNav>
       </NavbarContainer>
+
+      {/* Contact Modal */}
+      <Modal
+        isOpen={isContactFormOpen}
+        onClose={() => setIssContactFormOpen(false)}
+      >
+        <ContactForm handleClose={() => setIssContactFormOpen(false)} />
+      </Modal>
     </div>
   );
 };
