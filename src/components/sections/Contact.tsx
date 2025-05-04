@@ -20,7 +20,7 @@ const Contact = () => {
         <div className="relative mb-4">
           <Image
             src="/dj-logo.png"
-            alt="Deepesh Jain Logo"
+            alt="Deepesh Jain Logo || Fullstack Developer || React Developer"
             width={80}
             height={80}
             draggable={false}

@@ -56,7 +56,7 @@ const Hero: NextPage = () => {
             <div className="w-[2.5em] h-[2.5em] lg:w-[1.5em] lg:h-[1.5em] overflow-hidden rounded-full border-2 border-blue-500 mx-3 hover:scale-125 order-1 lg:order-2 mb-3 lg:mb-0">
               <Image
                 src="/deepesh-profile.png"
-                alt="Deepesh Jain"
+                alt="Deepesh Jain || Profile Image || Software Engineer"
                 width={80}
                 height={80}
                 className="object-cover w-full h-full"

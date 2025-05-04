@@ -118,7 +118,7 @@ const ContactForm = ({ handleClose }: ContactFormProps) => {
         >
           <Image
             src="/dj-logo.png"
-            alt="logo"
+            alt="Deepesh Jain Logo || Fullstack Developer"
             width={64}
             height={64}
             className="m-auto mb-6"

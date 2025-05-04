@@ -87,7 +87,7 @@ const About = () => {
             >
               <Image
                 src="/deepesh-jain-crop.png"
-                alt="Deepesh Jain"
+                alt="Deepesh Jain || Frontend Developer || React Developer"
                 width={450}
                 height={400}
                 className="rounded-2xl object-cover md:shadow-xl"

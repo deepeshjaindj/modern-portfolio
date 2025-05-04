@@ -259,7 +259,12 @@ export const NavbarLogo = () => {
       href="/"
       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
     >
-      <Image src="/dj-logo.png" alt="logo" width={32} height={32} />
+      <Image
+        src="/dj-logo.png"
+        alt="Deepesh Jain Logo || Frontend Developer || React Developer"
+        width={32}
+        height={32}
+      />
     </Link>
   );
 };
