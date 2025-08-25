@@ -17,6 +17,7 @@ import {
   SiVercel,
 } from "react-icons/si";
 import { TbBrandFramerMotion } from "react-icons/tb";
+import { FiDownload } from "react-icons/fi";
 
 const Projects = () => {
   const content = [
@@ -165,6 +166,16 @@ const Projects = () => {
         <h2 className="text-lg sm:text-xl md:text-2xl mt-2 text-neutral-600">
           A collection of crafted experiences
         </h2>
+        <a
+          href="/Deepesh-Jain-Resume.pdf"
+          download
+          className="relative mt-8 flex items-center gap-1 px-1 border border-white/30 text-white/80 rounded-full bg-white/10 backdrop-blur-md transition-all duration-300 hover:bg-white/20 hover:text-white text-md font-sans"
+        >
+          <div className="px-6 py-2 rounded-full bg-pink-600 text-md font-bold flex gap-2 items-center">
+            Corporate Projects (In Resume)
+            <FiDownload className="text-xl text-white" />
+          </div>
+        </a>
       </motion.div>
       <StickyScroll content={content} />
     </section>
