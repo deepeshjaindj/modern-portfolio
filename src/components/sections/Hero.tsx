@@ -3,11 +3,10 @@
 import type { NextPage } from "next";
 import { AuroraBackground, AuroraText } from "../atoms";
 import Image from "next/image";
-import { FiExternalLink, FiMail } from "react-icons/fi";
+import { FiDownload, FiMail } from "react-icons/fi";
 import { useState } from "react";
 import Modal from "../molecules/Modal";
 import { ContactForm } from "../molecules";
-import toast from "react-hot-toast";
 
 const Hero: NextPage = () => {
   const [isContactFormOpen, setIssContactFormOpen] = useState(false);
@@ -26,7 +25,7 @@ const Hero: NextPage = () => {
 
         {/* Hero Content */}
         <div className="relative z-20 flex flex-col items-center text-center space-y-6 px-8 lg:px-10 xl:px-12 sm:max-w-[90%] md:max-w-[80%] lg:max-w-[70%] xl:max-w-[60%]">
-          <a
+          {/* <a
             href="/Deepesh-Jain-Resume.pdf"
             download
             className="relative flex items-center gap-1 px-1 border border-white/30 text-white/80 rounded-full bg-white/10 backdrop-blur-md transition-all duration-300 hover:bg-white/20 hover:text-white text-md font-sans"
@@ -35,7 +34,7 @@ const Hero: NextPage = () => {
               Hire?
             </div>
             <span className="font-semibold mr-2">Download Resume</span>
-          </a>
+          </a> */}
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white drop-shadow-lg font-serif mt-2">
             Crafting Scalable, Performant, and Future-Ready{" "}
@@ -86,13 +85,19 @@ const Hero: NextPage = () => {
               className="relative flex items-center justify-center px-6 py-3 text-lg text-white bg-transparent border border-white/50
                         rounded-full shadow-lg hover:bg-gradient-to-r hover:from-purple-500 hover:to-blue-500 
                         transition-all duration-500 group overflow-hidden font-sans mt-4"
-              onClick={() => toast.success("Blog is Coming Soon!")}
+              // onClick={() => toast.success("Blog is Coming Soon!")}
             >
               {/* Button Text */}
-              <span className="relative z-10">Read Blog</span>
+              <a
+                href="/Deepesh-Jain-Resume.pdf"
+                download
+                className="relative z-10"
+              >
+                Resume
+              </a>
 
               <div className="ml-3 relative z-10">
-                <FiExternalLink className="text-xl text-white" />
+                <FiDownload className="text-xl text-white" />
               </div>
             </button>
           </div>
