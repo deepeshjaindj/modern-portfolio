@@ -71,5 +71,5 @@ Contributions are welcome! Please submit a pull request or issue on the [GitHub 
 Deepesh Jain - [deepeshjain.vercel.app](https://deepeshjain.vercel.app/)
 
 [![Twitter](https://img.shields.io/badge/Twitter-@deepeshjaindj2-blue)](https://twitter.com/deepeshjaindj2)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-@deepeshjain-dj-blue)](https://linkedin.com/in/deepeshjain-dj)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-@deepeshjain--dj-blue)](https://linkedin.com/in/deepeshjain-dj)
 [![GitHub](https://img.shields.io/badge/GitHub-@deepeshjaindj-blue)](https://github.com/deepeshjaindj)
