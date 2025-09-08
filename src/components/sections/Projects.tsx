@@ -27,6 +27,7 @@ import {
   SiVuetify,
 } from "react-icons/si";
 import { TbBrandFramerMotion } from "react-icons/tb";
+import { RiTeamLine } from "react-icons/ri";
 import { FiGithub } from "react-icons/fi";
 
 const TABS = {
@@ -35,7 +36,7 @@ const TABS = {
 };
 
 const Projects = () => {
-  const [activeTab, setActiveTab] = useState(TABS.PROJECTS);
+  const [activeTab, setActiveTab] = useState(TABS.TEAMS);
 
   const content =
     activeTab === TABS.PROJECTS
@@ -278,7 +279,7 @@ const Projects = () => {
           A collection of crafted experiences
         </h2>
         <div className="flex flex-col md:flex-row gap-4 md:gap-2 mt-8 justify-center items-center">
-          {/* <div className="relative flex items-center gap-1 text-white rounded-full backdrop-blur-md transition-all duration-300 text-md font-sans">
+          <div className="relative flex items-center gap-1 text-white rounded-full backdrop-blur-md transition-all duration-300 text-md font-sans">
             <div
               onClick={() => setActiveTab(TABS.TEAMS)}
               className={`px-6 py-2 rounded-full font-bold flex gap-2 items-center cursor-pointer transition-colors duration-300
@@ -293,7 +294,7 @@ const Projects = () => {
                 className={`text-xl transition-colors duration-300 ${activeTab === TABS.TEAMS ? "text-white" : "text-pink-600"}`}
               />
             </div>
-          </div> */}
+          </div>
           <div className="relative flex items-center gap-1 text-white rounded-full backdrop-blur-md transition-all duration-300 text-md font-sans">
             <div
               onClick={() => setActiveTab(TABS.PROJECTS)}
