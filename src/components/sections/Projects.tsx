@@ -164,11 +164,11 @@ const Projects = () => {
           {
             title: "MikMak + Swaven",
             shortSummary:
-              "A leading shoppable media platform that powers interactive commerce experiences for global brands. My primary focus is on enhancing the widgeting system that enables seamless product embedding across digital channels, while also strengthening the analytics pipeline to provide brands with actionable insights.",
+              "A leading shoppable media platform that powers interactive commerce experiences for global brands. My primary focus is on enhancing the widgeting system that enables seamless product embedding across digital channels, and strengthening the analytics pipeline.",
             description: [
               "Worked on Vue.js-based interactive widgets that drive shoppable experiences across media touchpoints.",
-              "Enhanced cross-platform performance of widgets, ensuring smooth rendering and compatibility across diverse environments.",
-              "Explored AI-driven features by participating in an AI Hackathon, working with AWS Bedrock and Knowledge Bases.",
+              "Enhanced cross-platform performance of widgets, resolved device specific issues.",
+              "Explored AI-driven features, participated in an AI Hackathon, and worked with AWS Bedrock.",
             ],
             tagline: "Shoppable media with scalable analytics backbone",
             techs: [
@@ -196,8 +196,8 @@ const Projects = () => {
               "Played a key role in building a nationwide business directory and lead-generation platform designed for heavy search traffic",
             description: [
               "Crafted reusable React + TypeScript components that powered a consistent and performant UI across the platform.",
-              "Delivered complex search and filtering flows by integrating deeply with GraphQL APIs, ensuring speed and accuracy.",
-              "Solved cross-device and accessibility challenges, making the platform inclusive and reliable under load.",
+              "Delivered complex search and filtering flows by integrating deeply with GraphQL APIs.",
+              "Solved cross-device and accessibility challenges.",
               "Collaborated across multiple service teams, aligning frontend delivery with backend microservices in a distributed setup.",
             ],
             tagline:
@@ -226,10 +226,10 @@ const Projects = () => {
             shortSummary:
               "Contributed to building a trip planner platform designed to streamline travel planning by managing products, suppliers, itineraries, bookings, and quotes.",
             description: [
-              "Built responsive, high-performance UIs with React.js and Next.js, leveraging lazy loading, code splitting, and React Query for optimized rendering.",
-              "Improved overall application performance and scalability through code optimizations",
+              "Built responsive, high-performance UIs with React.js and Next.js, leveraging code splitting, and React Query for optimized rendering.",
+              "Improved overall application performance and scalability through optimizations",
               "Integrated AWS S3 for secure storage of travel-related assets and resources.",
-              "Collaborated cross-functionally with developers, designers, and product managers to translate business requirements into scalable solutions.",
+              "Collaborated cross-functionally to translate business requirements into scalable solutions.",
             ],
             tagline: "Scalable trip planner with microservices architecture",
             techs: [
