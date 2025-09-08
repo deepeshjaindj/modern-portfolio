@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { HiMail } from "react-icons/hi";
 import { SOCIAL_LINKS } from "@/utils/constants";
+import { FaDownload } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -46,6 +47,15 @@ const Footer = () => {
                   </Link>
                 </li>
               ))}
+              <li>
+                <a
+                  href="/Deepesh-Jain-Resume.pdf"
+                  download
+                  className="transition-colors hover:text-primaryYellow flex items-center gap-1"
+                >
+                  Resume <FaDownload />
+                </a>
+              </li>
             </ul>
           </div>
           <div>
