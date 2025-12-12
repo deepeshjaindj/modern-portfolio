@@ -77,7 +77,6 @@ const Footer = () => {
           </div>
         </div>
 
-
         {/* Contact */}
         <div>
           <h2 className="text-base text-neutral-200">
