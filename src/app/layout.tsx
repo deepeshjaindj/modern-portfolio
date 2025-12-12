@@ -155,7 +155,7 @@ export default function RootLayout({
         image: `${siteUrl}/deepesh-profile.png`,
         alumniOf: {
           "@type": "EducationalOrganization",
-          name: "Educational Institution",
+          name: "Babulal Tarabai Institute of Research and Technology",
         },
         knowsAbout: [
           "React",
@@ -187,6 +187,15 @@ export default function RootLayout({
         provider: {
           "@id": `${siteUrl}/#person`,
         },
+        address: {
+          "@type": "PostalAddress",
+          addressCountry: "IN",
+          addressLocality: "India",
+        },
+        telephone: "+917999186610",
+        email: "deepeshjainofficial@gmail.com",
+        image: `${siteUrl}/deepesh-profile.png`,
+        priceRange: "$$",
         areaServed: "Worldwide",
         serviceType: [
           "Web Development",
