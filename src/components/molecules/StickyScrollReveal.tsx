@@ -121,7 +121,7 @@ export const StickyScroll = ({ content }: StickyScrollProps) => {
             </div>
 
             <Image
-              alt={item.title + " || Deepesh Jain Projects || Fullstack"}
+              alt={`${item.title} - ${item.shortSummary} | Deepesh Jain Portfolio Project`}
               loading="lazy"
               width={1203}
               height={753}

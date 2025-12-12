@@ -5,9 +5,9 @@ import {
   Playfair_Display,
   Geist_Mono,
 } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { Navbar } from "@/components/molecules";
-import Head from "next/head";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -32,11 +32,16 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = "https://deepeshjain.vercel.app";
+
 export const metadata: Metadata = {
-  title: "Deepesh Jain - An Engineer and a Problem Solver",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Deepesh Jain - An Engineer and a Problem Solver",
+    template: "%s | Deepesh Jain Portfolio",
+  },
   description:
-    "Experienced Fullstack Developer building scalable web apps using React, Next, Node, and Tailwind.",
-  authors: [{ name: "Deepesh Jain", url: "https://deepeshjain.vercel.app" }],
+    "Experienced Fullstack Developer building scalable web apps using React, Next.js, Node.js, and Tailwind. 3+ years of experience crafting dynamic, modern web applications with TypeScript, AWS, and cloud services.",
   keywords: [
     "Deepesh Jain",
     "Deepesh Jain Portfolio",
@@ -54,23 +59,70 @@ export const metadata: Metadata = {
     "Developer Portfolio",
     "Modern Portfolio",
     "Freelance Developer",
-    "Mern Stack Developer",
+    "MERN Stack Developer",
     "Remote Developer",
+    "Web Developer India",
+    "React TypeScript Developer",
   ],
-  abstract:
-    "I'm Deepesh Jain, a passionate React & Fullstack Developer with 3+ years of experience crafting dynamic, scalable, and modern web applications. I specialize in React, Node.js, TypeScript, and cloud services like AWS — blending performance and design into seamless user experiences. From portfolios to multi-tenant platforms, I turn ideas into products that perform and scale. Let’s build something great together.",
+  authors: [{ name: "Deepesh Jain", url: siteUrl }],
   creator: "Deepesh Jain",
+  publisher: "Deepesh Jain",
   applicationName: "Deepesh Jain Portfolio",
   category: "Technology",
-  publisher: "Deepesh Jain",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteUrl,
+    siteName: "Deepesh Jain Portfolio",
     title: "Deepesh Jain - An Engineer and a Problem Solver",
     description:
-      "Experienced Fullstack Developer building scalable web apps using React, Next, Node, and Tailwind.",
-    siteName: "Deepesh Jain Portfolio",
-    url: "https://deepeshjain.vercel.app",
-    type: "website",
-    countryName: "India",
+      "Experienced Fullstack Developer building scalable web apps using React, Next.js, Node.js, and Tailwind. Specializing in TypeScript, AWS, and modern web technologies.",
+    images: [
+      {
+        url: `${siteUrl}/deepesh-profile.png`,
+        width: 1200,
+        height: 630,
+        alt: "Deepesh Jain - Fullstack Developer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Deepesh Jain - An Engineer and a Problem Solver",
+    description:
+      "Experienced Fullstack Developer building scalable web apps using React, Next.js, Node.js, and Tailwind.",
+    creator: "@deepeshjaindj2",
+    images: [`${siteUrl}/deepesh-profile.png`],
+  },
+  alternates: {
+    canonical: siteUrl,
+  },
+  manifest: "/manifest.json",
+  icons: {
+    icon: [
+      { url: "/deepesh-profile.png", sizes: "192x192", type: "image/png" },
+      { url: "/deepesh-profile.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [
+      { url: "/deepesh-profile.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
+  other: {
+    "theme-color": "#1e3a8a",
+    "apple-mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-status-bar-style": "default",
+    "format-detection": "telephone=no",
   },
 };
 
@@ -79,35 +131,87 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": `${siteUrl}/#person`,
+        name: "Deepesh Jain",
+        url: siteUrl,
+        sameAs: [
+          "https://github.com/deepeshjaindj",
+          "https://linkedin.com/in/deepeshjain-dj",
+          "https://twitter.com/deepeshjaindj2",
+          "https://stackoverflow.com/users/14953697/deepesh-jain",
+        ],
+        jobTitle: "Fullstack Developer",
+        worksFor: {
+          "@type": "Organization",
+          name: "Ksolves India Limited",
+        },
+        description:
+          "Fullstack Developer specializing in scalable web apps using React, Next.js, Node.js, and TypeScript.",
+        image: `${siteUrl}/deepesh-profile.png`,
+        alumniOf: {
+          "@type": "EducationalOrganization",
+          name: "Educational Institution",
+        },
+        knowsAbout: [
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Node.js",
+          "JavaScript",
+          "Full Stack Development",
+          "Web Development",
+          "Software Engineering",
+        ],
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        url: siteUrl,
+        name: "Deepesh Jain Portfolio",
+        description:
+          "Portfolio website of Deepesh Jain, a Fullstack Developer specializing in React, Next.js, Node.js, and TypeScript.",
+        publisher: {
+          "@id": `${siteUrl}/#person`,
+        },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": `${siteUrl}/#service`,
+        name: "Fullstack Development Services",
+        provider: {
+          "@id": `${siteUrl}/#person`,
+        },
+        areaServed: "Worldwide",
+        serviceType: [
+          "Web Development",
+          "Fullstack Development",
+          "Frontend Development",
+          "Backend Development",
+          "React Development",
+          "Next.js Development",
+        ],
+      },
+    ],
+  };
+
   return (
     <html lang="en">
-      <Head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              name: "Deepesh Jain",
-              url: "https://deepeshjain.vercel.app",
-              sameAs: [
-                "https://github.com/deepeshjaindj",
-                "https://linkedin.com/in/deepeshjain-dj",
-              ],
-              jobTitle: "Fullstack Developer",
-              worksFor: {
-                "@type": "Organization",
-                name: "Ksolves India Limited",
-              },
-              description:
-                "Fullstack Developer specializing in scalable web apps using React, Next.js, Node.js, and TypeScript.",
-            }),
-          }}
-        />
-      </Head>
       <body
         className={`${poppinsSerif.variable} ${outfitSans.variable} ${playfairDisplay.variable} ${geistMono.variable} antialiased`}
       >
+        <Script
+          id="structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData),
+          }}
+        />
         <Navbar />
         {children}
         <Analytics />

@@ -77,21 +77,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* KEY WORDS HIDDEN */}
-        <div className="hidden">
-          <h1>Deepesh Jain</h1>
-          <h1>Full stack developer</h1>
-          <h1>Front end developer</h1>
-          <h1>Freelance developer</h1>
-          <h1>end to end delivery</h1>
-          <h1>React</h1>
-          <h1>Next.js</h1>
-          <h1>Javascript</h1>
-          <h1>Typescript</h1>
-          <h1>Node.js</h1>
-          <h1>Express.js</h1>
-          <h1>MongoDB</h1>
-        </div>
 
         {/* Contact */}
         <div>
