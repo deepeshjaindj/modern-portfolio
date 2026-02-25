@@ -254,7 +254,29 @@ const Offerings = () => {
   ];
 
   return (
-    <section className="min-h-dvh flex items-center justify-center bg-gradient-to-b from-neutral-100 to-white pt-16 pb-8 font-sans">
+    <section className="min-h-dvh flex flex-col items-center justify-center bg-gradient-to-b from-neutral-100 to-white pt-16 pb-12 font-sans gap-10">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        viewport={{ once: true }}
+        className="w-full max-w-7xl text-center px-4 sm:px-6 lg:px-10 xl:px-16"
+      >
+        <p className="section-label text-neutral-400">What I Offer</p>
+        <h1 className="section-heading text-neutral-800">
+          Building the Web,{" "}
+          <AuroraText
+            className="font-display italic font-bold"
+            colors={["#344CB7", "#577BC1", "#7324da", "#9333ea"]}
+            speed={2}
+          >
+            End to End
+          </AuroraText>
+        </h1>
+        <h2 className="section-subheading">
+          From pixel-perfect UIs to scalable backends — I cover the full stack
+        </h2>
+      </motion.div>
       <BentoGrid className="w-full max-w-7xl px-4 sm:px-6 lg:px-10 xl:px-16">
         {FEATURES.map((feature, idx) => (
           <BentoCard

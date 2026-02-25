@@ -43,7 +43,7 @@ const Contact = () => {
         </motion.div>
 
         <motion.div
-          whileHover={{ scale: 1.1 }}
+          whileHover={{ scale: 1.05 }}
           transition={{ type: "spring", stiffness: 300 }}
           className="my-10 group relative inline-flex cursor-pointer items-center justify-between overflow-hidden rounded-full border border-white/10 bg-white/10 py-[3px] pr-[3px] pl-2 text-base font-medium opacity-85 backdrop-blur-xs hover:bg-transparent md:py-1 md:pr-1 md:pl-3"
         >
@@ -60,27 +60,47 @@ const Contact = () => {
           </span>
         </motion.div>
 
-        <p className="tracking-wid text-base font-semibold text-white lg:text-2xl">
+        <p className="text-base font-semibold text-white lg:text-xl tracking-wide">
           Open to full-time opportunities and freelance collaborations.
         </p>
-        <p className="my-2 text-sm font-extralight tracking-wide text-balance text-white opacity-75 lg:text-xl">
-          Passionate about building dynamic web apps
-          <br />
-          and delivering smooth, user-focused experiences.
+        <p className="my-2 text-sm font-light tracking-wide text-balance text-white/70 lg:text-base">
+          Passionate about building dynamic web apps and delivering smooth,
+          user-focused experiences.
         </p>
-        <div className="mt-8 flex gap-10 justify-center text-xl md:text-3xl">
-          {/* Social links */}
+
+        {/* Email Chip */}
+        <motion.a
+          href="mailto:deepeshjainofficial@gmail.com?subject=Let's%20catch%20up%20for%20a%20cool%20opportunity!"
+          target="_blank"
+          rel="noopener noreferrer"
+          whileHover={{ scale: 1.04 }}
+          transition={{ type: "spring", stiffness: 300 }}
+          className="mt-4 flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm text-white/80 hover:text-white hover:bg-white/20 transition-all duration-300 text-sm font-medium"
+        >
+          <Image
+            src="/dj-logo.png"
+            alt="DJ"
+            width={20}
+            height={20}
+            className="rounded-full opacity-80"
+          />
+          deepeshjainofficial@gmail.com
+        </motion.a>
+
+        <div className="mt-8 flex gap-8 justify-center text-xl md:text-2xl">
           {SOCIAL_LINKS.map(({ href, label, icon }) => (
-            <a
+            <motion.a
               key={label}
               href={href}
               target="_blank"
               rel="noopener noreferrer"
+              whileHover={{ scale: 1.2, y: -2 }}
+              transition={{ type: "spring", stiffness: 300 }}
               className="text-neutral-300 transition-colors hover:text-primaryYellow"
             >
               <span className="sr-only">{label}</span>
               {icon}
-            </a>
+            </motion.a>
           ))}
         </div>
       </div>

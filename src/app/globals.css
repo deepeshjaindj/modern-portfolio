@@ -171,10 +171,32 @@
   html {
     scroll-behavior: smooth
   }
-  
+
   body {
     @apply bg-background text-foreground;
     scroll-behavior: smooth;
+  }
+
+  ::selection {
+    background-color: rgba(52, 76, 183, 0.25);
+    color: inherit;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #000957;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #344CB7;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #577BC1;
   }
 
   .tag-container {
@@ -182,5 +204,19 @@
       height: 24px !important;
       width: 24px !important;
     }
+  }
+}
+
+@layer utilities {
+  .section-heading {
+    @apply text-4xl sm:text-4xl md:text-5xl font-serif font-semibold leading-tight max-w-6xl;
+  }
+
+  .section-subheading {
+    @apply text-lg sm:text-xl md:text-2xl mt-2 text-neutral-600;
+  }
+
+  .section-label {
+    @apply text-xs font-bold tracking-widest uppercase text-neutral-400 mb-3;
   }
 }

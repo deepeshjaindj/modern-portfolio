@@ -103,11 +103,35 @@ const categories = [
   },
 ];
 
+const COLOR_CONFIG: Record<string, { dot: string; header: string }> = {
+  amber: {
+    dot: "bg-amber-400",
+    header: "text-amber-600 border-amber-200 bg-amber-50",
+  },
+  purple: {
+    dot: "bg-purple-400",
+    header: "text-purple-600 border-purple-200 bg-purple-50",
+  },
+  pink: {
+    dot: "bg-pink-400",
+    header: "text-pink-600 border-pink-200 bg-pink-50",
+  },
+  teal: {
+    dot: "bg-teal-400",
+    header: "text-teal-600 border-teal-200 bg-teal-50",
+  },
+};
+
 const TechStack = () => {
+  const totalSkills = categories.reduce(
+    (acc, cat) => acc + cat.skills.length,
+    0,
+  );
+
   return (
     <section
       id="skills"
-      className="relative flex flex-col items-center justify-center min-h-dvh w-full text-neutral-800 pt-16 pb-12 bg-[url('/square.png')]"
+      className="relative flex flex-col items-center justify-center min-h-dvh w-full text-neutral-800 pt-16 pb-16 bg-[url('/square.png')]"
     >
       <motion.div
         initial={{ opacity: 0, y: 50 }}
@@ -116,47 +140,66 @@ const TechStack = () => {
         viewport={{ once: true }}
         className="w-full max-w-7xl flex flex-col items-center text-center pt-12 font-sans px-4 sm:px-6 lg:px-10 xl:px-16"
       >
-        <h1 className="text-4xl sm:text-4xl md:text-5xl font-serif font-semibold leading-tight max-w-6xl">
-          My Developer Toolkit -
+        <p className="section-label">Skills & Tools</p>
+        <h1 className="section-heading">
+          My Developer Toolkit —{" "}
           <AuroraText
             className="font-display italic font-bold"
             colors={["#ce2094", "#7324daf8", "#e2258d"]}
             speed={2}
           >
-            Frameworks, tools, and technologies
+            {totalSkills}+ Technologies
           </AuroraText>
         </h1>
-        <h2 className="text-lg sm:text-xl md:text-2xl mt-2 text-neutral-600">
+        <h2 className="section-subheading">
           Skills sharpened by real-world problems
         </h2>
       </motion.div>
 
-      <div className="w-full max-w-7xl flex flex-col items-center text-center pt-16 font-mono px-4 sm:px-6 lg:px-10 xl:px-16">
-        {categories.map(({ title, skills, color }) => (
-          <motion.div
-            key={title}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="mb-10 w-full"
-            viewport={{ once: true }}
-          >
-            <div className="flex flex-wrap gap-3 justify-center">
-              {skills.map(({ title, icon }) => (
-                <motion.span
-                  key={title}
-                  className={`flex items-center gap-3 border border-${color}-500 bg-${color}-100 text-${color}-700 text-sm rounded-full py-2 px-4 w-fit cursor-default tag-container`}
-                  whileHover={{ scale: 1.08 }}
-                  whileTap={{ scale: 0.95 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+      <div className="w-full max-w-7xl flex flex-col gap-8 pt-14 font-sans px-4 sm:px-6 lg:px-10 xl:px-16">
+        {categories.map(({ title, skills, color }, catIdx) => {
+          const config = COLOR_CONFIG[color] ?? COLOR_CONFIG.teal;
+          return (
+            <motion.div
+              key={title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: catIdx * 0.1 }}
+              className="w-full"
+              viewport={{ once: true }}
+            >
+              {/* Category Header */}
+              <div className="flex items-center gap-3 mb-4">
+                <span
+                  className={`flex items-center gap-2 px-3 py-1 rounded-full border text-xs font-bold tracking-wide uppercase ${config.header}`}
                 >
-                  {icon}
+                  <span className={`w-1.5 h-1.5 rounded-full ${config.dot}`} />
                   {title}
-                </motion.span>
-              ))}
-            </div>
-          </motion.div>
-        ))}
+                </span>
+                <span className="text-xs text-neutral-400 font-mono">
+                  {skills.length} skills
+                </span>
+                <div className="flex-1 h-px bg-neutral-200" />
+              </div>
+
+              {/* Skill Badges */}
+              <div className="flex flex-wrap gap-2.5">
+                {skills.map(({ title: skillTitle, icon }) => (
+                  <motion.span
+                    key={skillTitle}
+                    className={`flex items-center gap-2 border border-${color}-500 bg-${color}-100 text-${color}-700 text-sm rounded-full py-1.5 px-3.5 w-fit cursor-default tag-container font-medium`}
+                    whileHover={{ scale: 1.07, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  >
+                    {icon}
+                    {skillTitle}
+                  </motion.span>
+                ))}
+              </div>
+            </motion.div>
+          );
+        })}
       </div>
     </section>
   );

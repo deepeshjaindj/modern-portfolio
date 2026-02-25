@@ -265,8 +265,9 @@ const Projects = () => {
         viewport={{ once: true }}
         className="w-full max-w-7xl flex flex-col items-center text-center pt-16 font-sans px-4 sm:px-6 lg:px-10 xl:px-16 mb-16"
       >
-        <h1 className="text-4xl sm:text-4xl md:text-5xl font-serif font-semibold leading-tight max-w-6xl">
-          Showcasing -
+        <p className="section-label">Portfolio</p>
+        <h1 className="section-heading">
+          Showcasing —{" "}
           <AuroraText
             className="font-display italic font-bold"
             colors={["#ce2094", "#7324daf8", "#e2258d"]}
@@ -275,7 +276,7 @@ const Projects = () => {
             My Passion Projects
           </AuroraText>
         </h1>
-        <h2 className="text-lg sm:text-xl md:text-2xl mt-2 text-neutral-600">
+        <h2 className="section-subheading">
           A collection of crafted experiences
         </h2>
         <div className="flex flex-col md:flex-row gap-4 md:gap-2 mt-8 justify-center items-center">

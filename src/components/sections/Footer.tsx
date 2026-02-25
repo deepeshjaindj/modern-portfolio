@@ -12,7 +12,16 @@ const Footer = () => {
       <div className="container mx-auto mb-12 mt-6 grid max-w-6xl gap-8 py-12 md:grid-cols-[1.1fr_1.4fr_1.1fr] md:gap-16 text-center md:text-left">
         <div>
           <h2 className="text-2xl font-semibold text-white">Deepesh Jain</h2>
-          <p className="mt-3 text-sm text-neutral-300">
+          <div className="mt-2 flex items-center gap-2 justify-center md:justify-start">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-400"></span>
+            </span>
+            <span className="text-green-400 text-xs font-medium tracking-wide">
+              Available for work
+            </span>
+          </div>
+          <p className="mt-3 text-sm text-neutral-400 leading-relaxed">
             Help you launch experiences that look great, perform fast, and scale
             effortlessly — front to back.
           </p>
@@ -23,7 +32,7 @@ const Footer = () => {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-neutral-300 transition-colors hover:text-primaryYellow"
+                className="text-neutral-400 transition-all hover:text-primaryYellow hover:-translate-y-0.5 duration-200"
               >
                 <span className="sr-only">{label}</span>
                 {icon}

@@ -12,7 +12,33 @@ interface Certification {
   credentialId?: string;
   credentialUrl?: string;
   description?: string;
+  accentColor?: string;
 }
+
+const ISSUER_COLORS: Record<string, string> = {
+  "MongoDB University":
+    "from-green-500/10 to-green-500/5 border-green-200 [--accent:theme(colors.green.500)] [--accent-light:theme(colors.green.100)] [--accent-text:theme(colors.green.700)]",
+  Workato:
+    "from-blue-500/10 to-blue-500/5 border-blue-200 [--accent:theme(colors.blue.500)] [--accent-light:theme(colors.blue.100)] [--accent-text:theme(colors.blue.700)]",
+  Airtable:
+    "from-orange-500/10 to-orange-500/5 border-orange-200 [--accent:theme(colors.orange.500)] [--accent-light:theme(colors.orange.100)] [--accent-text:theme(colors.orange.700)]",
+  Hackerrank:
+    "from-teal-500/10 to-teal-500/5 border-teal-200 [--accent:theme(colors.teal.500)] [--accent-light:theme(colors.teal.100)] [--accent-text:theme(colors.teal.700)]",
+};
+
+const ISSUER_ICON_STYLES: Record<string, string> = {
+  "MongoDB University": "bg-green-100 text-green-600",
+  Workato: "bg-blue-100 text-blue-600",
+  Airtable: "bg-orange-100 text-orange-600",
+  Hackerrank: "bg-teal-100 text-teal-600",
+};
+
+const ISSUER_LINK_STYLES: Record<string, string> = {
+  "MongoDB University": "text-green-600 hover:text-green-700",
+  Workato: "text-blue-600 hover:text-blue-700",
+  Airtable: "text-orange-600 hover:text-orange-700",
+  Hackerrank: "text-teal-600 hover:text-teal-700",
+};
 
 const Certifications = () => {
   const certifications: Certification[] = [
@@ -67,7 +93,7 @@ const Certifications = () => {
   return (
     <section
       id="certifications"
-      className="relative flex flex-col items-center justify-center min-h-dvh w-full text-neutral-800 pt-16 pb-12 bg-white"
+      className="relative flex flex-col items-center justify-center min-h-dvh w-full text-neutral-800 pt-16 pb-16 bg-white"
     >
       <motion.div
         initial={{ opacity: 0, y: 50 }}
@@ -76,8 +102,9 @@ const Certifications = () => {
         viewport={{ once: true }}
         className="w-full max-w-7xl flex flex-col items-center text-center pt-12 font-sans px-4 sm:px-6 lg:px-10 xl:px-16"
       >
-        <h1 className="text-4xl sm:text-4xl md:text-5xl font-serif font-semibold leading-tight max-w-6xl">
-          My Credentials -{" "}
+        <p className="section-label">Credentials</p>
+        <h1 className="section-heading">
+          My Credentials —{" "}
           <AuroraText
             className="font-display italic font-bold"
             colors={["#ce2094", "#7324daf8", "#e2258d"]}
@@ -86,12 +113,12 @@ const Certifications = () => {
             Certifications & Achievements
           </AuroraText>
         </h1>
-        <h2 className="text-lg sm:text-xl md:text-2xl mt-2 text-neutral-600">
+        <h2 className="section-subheading">
           Validating expertise, one certificate at a time
         </h2>
       </motion.div>
 
-      <div className="w-full max-w-7xl flex flex-col items-center pt-16 font-sans px-4 sm:px-6 lg:px-10 xl:px-16">
+      <div className="w-full max-w-7xl flex flex-col items-center pt-14 font-sans px-4 sm:px-6 lg:px-10 xl:px-16">
         {certifications.length === 0 ? (
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -107,61 +134,73 @@ const Certifications = () => {
             </p>
           </motion.div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
-            {certifications.map((cert, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.02, y: -5 }}
-                className="bg-white border border-neutral-200 rounded-xl p-6 shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] hover:shadow-[0_0_32px_rgba(34,_42,_53,_0.12),_0_2px_2px_rgba(0,_0,_0,_0.08),_0_0_0_1px_rgba(34,_42,_53,_0.06),_0_0_8px_rgba(34,_42,_53,_0.12),_0_24px_96px_rgba(47,_48,_55,_0.08),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] transition-all duration-300"
-              >
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex items-center gap-3">
-                    <div className="p-3 bg-pink-100 rounded-lg">
-                      <FaCertificate className="text-pink-600 text-xl" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 w-full">
+            {certifications.map((cert, index) => {
+              const gradientClass =
+                ISSUER_COLORS[cert.issuer] ?? ISSUER_COLORS["Hackerrank"];
+              const iconClass =
+                ISSUER_ICON_STYLES[cert.issuer] ?? "bg-pink-100 text-pink-600";
+              const linkClass =
+                ISSUER_LINK_STYLES[cert.issuer] ??
+                "text-pink-600 hover:text-pink-700";
+
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -5 }}
+                  className={`bg-gradient-to-br ${gradientClass} border rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300`}
+                >
+                  <div className="flex items-start gap-4 mb-4">
+                    <div
+                      className={`p-2.5 rounded-lg flex-shrink-0 ${iconClass}`}
+                    >
+                      <FaCertificate className="text-xl" />
                     </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold text-neutral-800">
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-base font-bold text-neutral-800 leading-snug">
                         {cert.title}
                       </h3>
-                      <p className="text-sm text-neutral-600 mt-1">
+                      <p className="text-sm font-medium text-neutral-500 mt-1">
                         {cert.issuer}
                       </p>
                     </div>
                   </div>
-                </div>
 
-                {cert.description && (
-                  <p className="text-sm text-neutral-600 mb-4 line-clamp-3">
-                    {cert.description}
-                  </p>
-                )}
-
-                <div className="flex items-center justify-between pt-4 border-t border-neutral-100">
-                  <span className="text-xs text-neutral-500">{cert.date}</span>
-                  {cert.credentialUrl && (
-                    <a
-                      href={cert.credentialUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-pink-600 hover:text-pink-700 text-sm font-medium transition-colors"
-                    >
-                      Verify
-                      <FaExternalLinkAlt className="text-xs" />
-                    </a>
+                  {cert.description && (
+                    <p className="text-sm text-neutral-600 mb-4 line-clamp-3 leading-relaxed">
+                      {cert.description}
+                    </p>
                   )}
-                </div>
 
-                {cert.credentialId && (
-                  <p className="text-xs text-neutral-400 mt-2">
-                    ID: {cert.credentialId}
-                  </p>
-                )}
-              </motion.div>
-            ))}
+                  <div className="flex items-center justify-between pt-4 border-t border-neutral-200/60">
+                    <span className="text-xs font-medium text-neutral-400">
+                      {cert.date}
+                    </span>
+                    {cert.credentialUrl && (
+                      <a
+                        href={cert.credentialUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`flex items-center gap-1.5 text-sm font-semibold transition-colors ${linkClass}`}
+                      >
+                        Verify
+                        <FaExternalLinkAlt className="text-xs" />
+                      </a>
+                    )}
+                  </div>
+
+                  {cert.credentialId && (
+                    <p className="text-xs text-neutral-400 mt-2 font-mono">
+                      ID: {cert.credentialId}
+                    </p>
+                  )}
+                </motion.div>
+              );
+            })}
           </div>
         )}
       </div>

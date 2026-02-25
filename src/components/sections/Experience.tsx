@@ -17,8 +17,8 @@ const Experience = () => {
           <h1 className="text-2xl md:text-3xl font-bold my-1 md:my-2">
             Senior Software Engineer
           </h1>
-          <h2 className="flex text-md gap-2 items-center">
-            <OneSolveIcon className="w-5 h-5" />
+          <h2 className="flex text-sm md:text-md gap-2 items-center">
+            <OneSolveIcon className="w-4 h-4" />
             OneSolve Technologies
           </h2>
           <p className="flex items-center gap-2 items-center mt-1 text-sm md:text-md">
@@ -78,7 +78,7 @@ const Experience = () => {
           <h1 className="text-2xl md:text-3xl font-bold my-1 md:my-2">
             Software Engineer
           </h1>
-          <h2 className="flex text-md gap-2 items-center">
+          <h2 className="flex text-sm md:text-md gap-2 items-center">
             <KsolvesIcon className="w-5 h-5" />
             Ksolves India Limited
           </h2>
@@ -141,7 +141,7 @@ const Experience = () => {
           <h1 className="text-2xl md:text-3xl font-bold my-1 md:my-2">
             Software Developer - Intern
           </h1>
-          <h2 className="flex text-md gap-2 items-center">
+          <h2 className="flex text-sm md:text-md gap-2 items-center">
             <KsolvesIcon className="w-5 h-5" />
             Ksolves India Limited
           </h2>
@@ -206,8 +206,9 @@ const Experience = () => {
         viewport={{ once: true }}
         className="w-full max-w-7xl flex flex-col items-center text-center pt-12 font-sans px-4 sm:px-6 lg:px-10 xl:px-16"
       >
-        <h1 className="text-4xl sm:text-4xl md:text-5xl font-serif font-semibold leading-tight max-w-6xl">
-          The Timeline of -
+        <p className="section-label">Work History</p>
+        <h1 className="section-heading">
+          The Timeline of —{" "}
           <AuroraText
             className="font-display italic font-bold"
             colors={["#ce2094", "#7324daf8", "#e2258d"]}
@@ -216,7 +217,7 @@ const Experience = () => {
             Code, Growth, and Creativity
           </AuroraText>
         </h1>
-        <h2 className="text-lg sm:text-xl md:text-2xl mt-2 text-neutral-600">
+        <h2 className="section-subheading">
           Solving problems, scaling solutions
         </h2>
       </motion.div>
