@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { AuroraText } from "../atoms";
 import { Timeline } from "../molecules";
 import { FaLocationDot } from "react-icons/fa6";
-import { KsolvesIcon } from "@/assets";
+import { KsolvesIcon, OneSolveIcon } from "@/assets";
 import Image from "next/image";
 
 const Experience = () => {
@@ -13,11 +13,64 @@ const Experience = () => {
     {
       title: (
         <div className="text-neutral-600">
-          <span className="text-sm">JULY 2023 - PRESENT</span>
+          <span className="text-sm">JAN 2026 - PRESENT</span>
+          <h1 className="text-2xl md:text-3xl font-bold my-1 md:my-2">
+            Senior Software Engineer
+          </h1>
+          <h2 className="flex text-md gap-2 items-center">
+            <OneSolveIcon className="w-5 h-5" />
+            OneSolve Technologies
+          </h2>
+          <p className="flex items-center gap-2 items-center mt-1 text-sm md:text-md">
+            {" "}
+            <FaLocationDot />
+            Nashik, India
+          </p>
+        </div>
+      ),
+      className: "pt-10 md:pt-20",
+      content: (
+        <div className="mb-8 text-sm md:text-md lg:text-lg font-normal text-neutral-600">
+          <p>
+            As a Senior Software Engineer at OneSolve, I lead the design and development of scalable integration solutions using the Workato platform. I collaborate closely with cross-functional teams to architect and implement complex workflows that automate critical business processes across multiple enterprise systems, including Salesforce, databases, and third-party APIs. My role involves optimizing system performance, implementing robust error-handling mechanisms, and ensuring high uptime through proactive monitoring and maintenance.
+          </p>
+          <ul className="list-disc pl-6 space-y-3 mt-3 mb-5">
+            {[
+              "Architected and deployed complex integration workflows using Workato platform, connecting Salesforce, databases, and third-party APIs to automate critical business processes across multiple enterprise systems.",
+              "Reduced manual workload by 40% through collaboration with business analysts and stakeholders to gather requirements and implement automated solutions.",
+              "Enhanced system performance by 35% by identifying workflow bottlenecks and implementing industry best practices for integration optimization.",
+              "Implemented comprehensive error-handling mechanisms and monitoring solutions, achieving 99.5% uptime and reducing issue resolution time by 50%."
+            ].map((item, idx) => (
+              <li key={idx}>{item}</li>
+            ))}
+          </ul>
+          <div className="grid grid-cols-2 gap-4">
+            <Image
+              src="/stock4.jpg"
+              alt="Deepesh Jain || Fullstack Developer || Stock Image"
+              width={500}
+              height={500}
+              className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+            />
+            <Image
+              src="/stock3.jpg"
+              alt="Deepesh Jain || Frontend Developer || Stock Image"
+              width={500}
+              height={500}
+              className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+            />
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: (
+        <div className="text-neutral-600">
+          <span className="text-sm">JULY 2023 - JAN 2026</span>
           <h1 className="text-2xl md:text-3xl font-bold my-1 md:my-2">
             Software Engineer
           </h1>
-          <h2 className="flex text-sm md:text-md gap-2 items-center">
+          <h2 className="flex text-md gap-2 items-center">
             <KsolvesIcon className="w-5 h-5" />
             Ksolves India Limited
           </h2>
@@ -80,7 +133,7 @@ const Experience = () => {
           <h1 className="text-2xl md:text-3xl font-bold my-1 md:my-2">
             Software Developer - Intern
           </h1>
-          <h2 className="flex text-sm md:text-md gap-2 items-center">
+          <h2 className="flex text-md gap-2 items-center">
             <KsolvesIcon className="w-5 h-5" />
             Ksolves India Limited
           </h2>

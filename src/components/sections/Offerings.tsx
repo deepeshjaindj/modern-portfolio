@@ -10,7 +10,6 @@ import {
   OrbitingCircles,
   AuroraText,
 } from "../atoms";
-import { FaFigma } from "react-icons/fa";
 import { motion } from "motion/react";
 import {
   FILE_TREE_ELEMENTS,
@@ -18,11 +17,9 @@ import {
   SECOND_CARD_ANIMATION_OFFERINGS,
 } from "@/utils/constants";
 import { VscVscodeInsiders } from "react-icons/vsc";
-import { RiTimeZoneFill } from "react-icons/ri";
+import { RiRobot3Line, RiStackLine, RiTimeZoneFill } from "react-icons/ri";
 import { GiNinjaHead } from "react-icons/gi";
 import { MdRocketLaunch } from "react-icons/md";
-import { AiOutlineApi } from "react-icons/ai";
-import { PiLego } from "react-icons/pi";
 import {
   AWSIcon,
   CSSIcon,
@@ -54,6 +51,7 @@ import {
 } from "@/assets";
 import MongoDBIcon from "@/assets/MongoDBIcon";
 import Image from "next/image";
+import { LuWorkflow } from "react-icons/lu";
 
 const Offerings = () => {
   const FEATURES = [
@@ -221,33 +219,33 @@ const Offerings = () => {
             variants={FIRST_CARD_ANIMATION_OFFERINGS}
             className="h-full w-1/3 rounded-2xl bg-white p-4 border border-neutral-200 flex flex-col items-center justify-center"
           >
-            <FaFigma className="rounded-full h-10 w-10 p-2 bg-red-100 text-red-600 border border-red-500" />
+            <LuWorkflow className="rounded-full h-10 w-10 p-2 bg-red-100 text-red-600 border border-red-500" />
             <p className="sm:text-sm text-xs text-center font-semibold text-neutral-500 mt-4">
-              Pixel Perfect UI
+              Automated Workflows
             </p>
             <p className="border border-red-500 bg-red-100 text-red-600 text-xs rounded-full px-2 py-0.5 mt-4">
-              Precision
+              Automation
             </p>
           </motion.div>
           <motion.div className="h-full relative w-1/3 rounded-2xl bg-white p-4 border border-neutral-200 flex flex-col items-center justify-center">
-            <PiLego className="rounded-full h-10 w-10 p-2 bg-green-100 text-green-600 border border-green-500" />
+            <RiRobot3Line className="rounded-full h-10 w-10 p-2 bg-green-100 text-green-600 border border-green-500" />
             <p className="sm:text-sm text-xs text-center font-semibold text-neutral-500 mt-4">
-              Lego-Like Structure
+              AI Agents & MCP
             </p>
             <p className="border border-green-500 bg-green-100 text-green-600 text-xs rounded-full px-2 py-0.5 mt-4">
-              Reusable
+              Agentic
             </p>
           </motion.div>
           <motion.div
             variants={SECOND_CARD_ANIMATION_OFFERINGS}
             className="h-full w-1/3 rounded-2xl bg-white p-4 border border-neutral-200 flex flex-col items-center justify-center"
           >
-            <AiOutlineApi className="rounded-full h-10 w-10 p-2 bg-orange-100 text-orange-600 border border-orange-500" />
+            <RiStackLine className="rounded-full h-10 w-10 p-2 bg-orange-100 text-orange-600 border border-orange-500" />
             <p className="sm:text-sm text-xs text-center font-semibold text-neutral-500 mt-4">
-              Always In the Loop
+              Full-stack Development
             </p>
             <p className="border border-orange-500 bg-orange-100 text-orange-600 text-xs rounded-full px-2 py-0.5 mt-4">
-              Async-friendly
+              Engineering
             </p>
           </motion.div>
         </motion.div>

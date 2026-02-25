@@ -51,7 +51,7 @@ const Footer = () => {
                 <a
                   href="/Deepesh-Jain-Resume.pdf"
                   download
-                  className="transition-colors hover:text-primaryYellow flex items-center gap-1"
+                  className="transition-colors hover:text-primaryYellow flex items-center justify-center md:justify-start gap-1"
                 >
                   Resume <FaDownload />
                 </a>

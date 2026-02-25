@@ -21,6 +21,7 @@ export { default as MySQLIcon } from "./MySQLIcon";
 export { default as NextJSIcon } from "./NextJSIcon";
 export { default as NodeJSIcon } from "./NodeJSIcon";
 export { default as NPMIcon } from "./NPMIcon";
+export { default as OneSolveIcon } from "./OneSolveIcon";
 export { default as PostgresIcon } from "./PostgresIcon";
 export { default as PostmanIcon } from "./PostmanIcon";
 export { default as ReactIcon } from "./ReactIcon";
