@@ -21,8 +21,10 @@ const Certifications = () => {
       issuer: "MongoDB University",
       date: "August 2024",
       credentialId: "MDBxi9ie30a7m",
-      credentialUrl: "https://ti-user-certificates.s3.amazonaws.com/ae62dcd7-abdc-4e90-a570-83eccba49043/dd09f6ac-9217-4db5-9ce9-c3747c6e8782-deepesh-jain-59a2fd65-5026-480a-8808-4223fecf5ab3-certificate.pdf",
-      description: "Demonstrated proficiency in MongoDB development, including schema design, aggregation, and performance optimization.",
+      credentialUrl:
+        "https://ti-user-certificates.s3.amazonaws.com/ae62dcd7-abdc-4e90-a570-83eccba49043/dd09f6ac-9217-4db5-9ce9-c3747c6e8782-deepesh-jain-59a2fd65-5026-480a-8808-4223fecf5ab3-certificate.pdf",
+      description:
+        "Demonstrated proficiency in MongoDB development, including schema design, aggregation, and performance optimization.",
     },
     {
       title: "Workato Foundation Level 1 & 2",
@@ -30,7 +32,8 @@ const Certifications = () => {
       date: "October 2025",
       credentialId: "88f2w4jfyb8z",
       credentialUrl: "https://verify.skilljar.com/c/88f2w4jfyb8z",
-      description: "Validated foundational knowledge of Workato's integration platform, covering recipe creation, data transformation, and automation best practices.",
+      description:
+        "Validated foundational knowledge of Workato's integration platform, covering recipe creation, data transformation, and automation best practices.",
     },
     {
       title: "Airtable Builder",
@@ -38,7 +41,8 @@ const Certifications = () => {
       date: "January 2026",
       credentialId: "zpc8rsskfd4d",
       credentialUrl: "https://verify.skilljar.com/c/zpc8rsskfd4d",
-      description: "Recognized for expertise in building and managing Airtable bases, including advanced formulas, automation, and integration capabilities.",
+      description:
+        "Recognized for expertise in building and managing Airtable bases, including advanced formulas, automation, and integration capabilities.",
     },
     {
       title: "Frontend Developer Certification",
@@ -46,7 +50,8 @@ const Certifications = () => {
       date: "December 2023",
       credentialId: "4685A19A5AEF",
       credentialUrl: "https://www.hackerrank.com/certificates/4685a19a5aef",
-      description: "Certified in frontend development skills, including HTML, CSS, JavaScript, and React.js, demonstrating the ability to build responsive and interactive web applications.",
+      description:
+        "Certified in frontend development skills, including HTML, CSS, JavaScript, and React.js, demonstrating the ability to build responsive and interactive web applications.",
     },
     {
       title: "JavaScript Developer Certification",
@@ -54,7 +59,8 @@ const Certifications = () => {
       date: "June 2023",
       credentialId: "A7E4602DB735",
       credentialUrl: "https://www.hackerrank.com/certificates/a7e4602db735",
-      description: "Certified in JavaScript programming, showcasing proficiency in core language features, algorithms, and problem-solving skills essential for modern web development.",
+      description:
+        "Certified in JavaScript programming, showcasing proficiency in core language features, algorithms, and problem-solving skills essential for modern web development.",
     },
   ];
 
@@ -164,4 +170,3 @@ const Certifications = () => {
 };
 
 export default Certifications;
-

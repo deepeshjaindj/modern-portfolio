@@ -3,7 +3,7 @@
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
-import { AuroraText, BackgroundBeamsCollide, FloatingDock } from "../atoms";
+import { AuroraText, FloatingDock } from "../atoms";
 import { SOCIAL_LINKS } from "@/utils/constants";
 
 const About = () => {
@@ -47,9 +47,8 @@ const About = () => {
               KNOW ABOUT ME
             </h4>
             <p className="text-center md:text-left">
-              Hey, I’m Deepesh Jain — a Fullstack Developer who’s obsessed
-              with crafting interfaces that don’t just look good, but feel
-              right.
+              Hey, I’m Deepesh Jain — a Fullstack Developer who’s obsessed with
+              crafting interfaces that don’t just look good, but feel right.
             </p>
             <p className="text-center md:text-left">
               I believe the best web experiences happen when design and
@@ -59,8 +58,8 @@ const About = () => {
               the stack.
             </p>
             <p className="text-center md:text-left">
-              Performance, accessibility, responsive design, clean code —
-              these aren’t buzzwords to me, they’re checkboxes I never skip.
+              Performance, accessibility, responsive design, clean code — these
+              aren’t buzzwords to me, they’re checkboxes I never skip.
             </p>
             <p className="text-center md:text-left">
               When I’m not coding, I’m probably diving into a new tech tool,

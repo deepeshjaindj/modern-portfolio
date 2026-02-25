@@ -32,14 +32,22 @@ const Experience = () => {
       content: (
         <div className="mb-8 text-sm md:text-md lg:text-lg font-normal text-neutral-600">
           <p>
-            As a Senior Software Engineer at OneSolve, I lead the design and development of scalable integration solutions using the Workato platform. I collaborate closely with cross-functional teams to architect and implement complex workflows that automate critical business processes across multiple enterprise systems, including Salesforce, databases, and third-party APIs. My role involves optimizing system performance, implementing robust error-handling mechanisms, and ensuring high uptime through proactive monitoring and maintenance.
+            As a Senior Software Engineer at OneSolve, I lead the design and
+            development of scalable integration solutions using the Workato
+            platform. I collaborate closely with cross-functional teams to
+            architect and implement complex workflows that automate critical
+            business processes across multiple enterprise systems, including
+            Salesforce, databases, and third-party APIs. My role involves
+            optimizing system performance, implementing robust error-handling
+            mechanisms, and ensuring high uptime through proactive monitoring
+            and maintenance.
           </p>
           <ul className="list-disc pl-6 space-y-3 mt-3 mb-5">
             {[
               "Architected and deployed complex integration workflows using Workato platform, connecting Salesforce, databases, and third-party APIs to automate critical business processes across multiple enterprise systems.",
               "Reduced manual workload by 40% through collaboration with business analysts and stakeholders to gather requirements and implement automated solutions.",
               "Enhanced system performance by 35% by identifying workflow bottlenecks and implementing industry best practices for integration optimization.",
-              "Implemented comprehensive error-handling mechanisms and monitoring solutions, achieving 99.5% uptime and reducing issue resolution time by 50%."
+              "Implemented comprehensive error-handling mechanisms and monitoring solutions, achieving 99.5% uptime and reducing issue resolution time by 50%.",
             ].map((item, idx) => (
               <li key={idx}>{item}</li>
             ))}
