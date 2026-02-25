@@ -21,18 +21,24 @@ const Hero: NextPage = () => {
 
   return (
     <AuroraBackground>
+      {/*
+        Mobile  (<md): natural height from content + padding, no forced min-h-dvh
+        Desktop (md+): min-h-dvh with vertical centering + absolute scroll indicator
+      */}
       <div
-        className="relative flex flex-col items-center justify-center min-h-dvh w-full bg-backgroundBlue pt-24 pb-24"
+        className="relative w-full flex flex-col items-center bg-backgroundBlue
+                   pt-24 pb-16
+                   md:min-h-dvh md:justify-center md:pt-0 md:pb-0"
         id="home"
       >
         {/* Base Background */}
-        <div className="absolute inset-0 bg-backgroundBlue color-backgroundBlue" />
+        <div className="absolute inset-0 bg-backgroundBlue" />
 
         {/* Background Image */}
-        <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-[url('/heroBg.jpg')] bg-cover opacity-40" />
+        <div className="pointer-events-none absolute inset-0 bg-[url('/heroBg.jpg')] bg-cover opacity-40" />
 
         {/* Hero Content */}
-        <div className="relative z-20 flex flex-col items-center text-center space-y-4 sm:space-y-6 px-6 sm:px-8 lg:px-10 xl:px-12 w-full max-w-[95%] sm:max-w-[90%] md:max-w-[80%] lg:max-w-[70%] xl:max-w-[60%]">
+        <div className="relative z-20 flex flex-col items-center text-center gap-6 px-6 sm:px-8 lg:px-10 xl:px-12 w-full max-w-[95%] sm:max-w-[90%] md:max-w-[80%] lg:max-w-[70%] xl:max-w-[60%]">
           {/* Available Badge */}
           <motion.div
             initial={{ opacity: 0, y: -10 }}
@@ -65,7 +71,7 @@ const Hero: NextPage = () => {
             </AuroraText>
           </motion.h1>
 
-          {/* Engaging Subheading */}
+          {/* Subheading */}
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -135,12 +141,16 @@ const Hero: NextPage = () => {
           </motion.div>
         </div>
 
-        {/* Scroll Indicator — sits in normal flow below content, not absolute */}
+        {/*
+          Mobile : in normal flow, sits naturally below stats with mt-10
+          Desktop: absolute bottom-6, overlaid on the full-height section
+        */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1 }}
-          className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 z-20"
+          className="relative z-20 mt-10 flex flex-col items-center gap-1.5
+                     md:absolute md:bottom-6 md:left-1/2 md:-translate-x-1/2 md:mt-0"
         >
           <span className="text-white/40 text-[10px] font-sans tracking-widest uppercase">
             Scroll
