@@ -61,13 +61,21 @@ const Hero: NextPage = () => {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white drop-shadow-lg font-serif"
           >
-            Crafting Scalable, Performant, and Future-Ready{" "}
+            Crafting Scalable{" "}
             <AuroraText
               className="font-display italic"
               colors={["#ff8800", "#ffea00f8", "#ffa600", "#e7cd37"]}
               speed={2}
             >
-              Web Solutions
+              Web Apps
+            </AuroraText>{" "}
+            & Enterprise{" "}
+            <AuroraText
+              className="font-display italic"
+              colors={["#ff8800", "#ffea00f8", "#ffa600", "#e7cd37"]}
+              speed={2}
+            >
+              Integrations
             </AuroraText>
           </motion.h1>
 

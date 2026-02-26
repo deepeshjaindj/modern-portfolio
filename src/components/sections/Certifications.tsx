@@ -4,6 +4,15 @@ import React from "react";
 import { motion } from "framer-motion";
 import { AuroraText } from "../atoms";
 import { FaCertificate, FaExternalLinkAlt } from "react-icons/fa";
+import { AirtableIcon, JavaScriptIcon, ReactIcon, WorkatoIcon } from "@/assets";
+import MongoDBIcon from "@/assets/MongoDBIcon";
+
+interface CertTheme {
+  gradient: string;
+  border: string;
+  iconBg: string;
+  link: string;
+}
 
 interface Certification {
   title: string;
@@ -12,32 +21,46 @@ interface Certification {
   credentialId?: string;
   credentialUrl?: string;
   description?: string;
-  accentColor?: string;
+  icon?: React.ReactNode;
+  theme: CertTheme;
 }
 
-const ISSUER_COLORS: Record<string, string> = {
-  "MongoDB University":
-    "from-green-500/10 to-green-500/5 border-green-200 [--accent:theme(colors.green.500)] [--accent-light:theme(colors.green.100)] [--accent-text:theme(colors.green.700)]",
-  Workato:
-    "from-blue-500/10 to-blue-500/5 border-blue-200 [--accent:theme(colors.blue.500)] [--accent-light:theme(colors.blue.100)] [--accent-text:theme(colors.blue.700)]",
-  Airtable:
-    "from-orange-500/10 to-orange-500/5 border-orange-200 [--accent:theme(colors.orange.500)] [--accent-light:theme(colors.orange.100)] [--accent-text:theme(colors.orange.700)]",
-  Hackerrank:
-    "from-teal-500/10 to-teal-500/5 border-teal-200 [--accent:theme(colors.teal.500)] [--accent-light:theme(colors.teal.100)] [--accent-text:theme(colors.teal.700)]",
-};
-
-const ISSUER_ICON_STYLES: Record<string, string> = {
-  "MongoDB University": "bg-green-100 text-green-600",
-  Workato: "bg-blue-100 text-blue-600",
-  Airtable: "bg-orange-100 text-orange-600",
-  Hackerrank: "bg-teal-100 text-teal-600",
-};
-
-const ISSUER_LINK_STYLES: Record<string, string> = {
-  "MongoDB University": "text-green-600 hover:text-green-700",
-  Workato: "text-blue-600 hover:text-blue-700",
-  Airtable: "text-orange-600 hover:text-orange-700",
-  Hackerrank: "text-teal-600 hover:text-teal-700",
+const THEMES: Record<string, CertTheme> = {
+  mongodb: {
+    gradient:
+      "linear-gradient(135deg, rgba(0,104,74,0.12) 0%, rgba(19,170,82,0.06) 50%, rgba(255,255,255,0.9) 100%)",
+    border: "1px solid rgba(19,170,82,0.25)",
+    iconBg: "rgba(19,170,82,0.12)",
+    link: "#00684A",
+  },
+  workato: {
+    gradient:
+      "linear-gradient(135deg, rgba(103,234,221,0.15) 0%, rgba(92,45,190,0.08) 50%, rgba(255,255,255,0.9) 100%)",
+    border: "1px solid rgba(103,234,221,0.3)",
+    iconBg: "rgba(103,234,221,0.15)",
+    link: "#5C2D91",
+  },
+  airtable: {
+    gradient:
+      "linear-gradient(135deg, rgba(252,180,0,0.12) 0%, rgba(24,191,255,0.08) 50%, rgba(255,255,255,0.9) 100%)",
+    border: "1px solid rgba(252,180,0,0.25)",
+    iconBg: "rgba(252,180,0,0.12)",
+    link: "#D97706",
+  },
+  react: {
+    gradient:
+      "linear-gradient(135deg, rgba(97,218,251,0.14) 0%, rgba(0,216,255,0.06) 50%, rgba(255,255,255,0.9) 100%)",
+    border: "1px solid rgba(97,218,251,0.3)",
+    iconBg: "rgba(97,218,251,0.15)",
+    link: "#0891B2",
+  },
+  javascript: {
+    gradient:
+      "linear-gradient(135deg, rgba(247,223,30,0.14) 0%, rgba(240,219,79,0.06) 50%, rgba(255,255,255,0.9) 100%)",
+    border: "1px solid rgba(247,223,30,0.3)",
+    iconBg: "rgba(247,223,30,0.15)",
+    link: "#B45309",
+  },
 };
 
 const Certifications = () => {
@@ -51,6 +74,8 @@ const Certifications = () => {
         "https://ti-user-certificates.s3.amazonaws.com/ae62dcd7-abdc-4e90-a570-83eccba49043/dd09f6ac-9217-4db5-9ce9-c3747c6e8782-deepesh-jain-59a2fd65-5026-480a-8808-4223fecf5ab3-certificate.pdf",
       description:
         "Demonstrated proficiency in MongoDB development, including schema design, aggregation, and performance optimization.",
+      icon: <MongoDBIcon />,
+      theme: THEMES.mongodb,
     },
     {
       title: "Workato Foundation Level 1 & 2",
@@ -60,6 +85,8 @@ const Certifications = () => {
       credentialUrl: "https://verify.skilljar.com/c/88f2w4jfyb8z",
       description:
         "Validated foundational knowledge of Workato's integration platform, covering recipe creation, data transformation, and automation best practices.",
+      icon: <WorkatoIcon />,
+      theme: THEMES.workato,
     },
     {
       title: "Airtable Builder",
@@ -69,6 +96,8 @@ const Certifications = () => {
       credentialUrl: "https://verify.skilljar.com/c/zpc8rsskfd4d",
       description:
         "Recognized for expertise in building and managing Airtable bases, including advanced formulas, automation, and integration capabilities.",
+      icon: <AirtableIcon />,
+      theme: THEMES.airtable,
     },
     {
       title: "Frontend Developer Certification",
@@ -78,6 +107,8 @@ const Certifications = () => {
       credentialUrl: "https://www.hackerrank.com/certificates/4685a19a5aef",
       description:
         "Certified in frontend development skills, including HTML, CSS, JavaScript, and React.js, demonstrating the ability to build responsive and interactive web applications.",
+      icon: <ReactIcon />,
+      theme: THEMES.react,
     },
     {
       title: "JavaScript Developer Certification",
@@ -87,6 +118,8 @@ const Certifications = () => {
       credentialUrl: "https://www.hackerrank.com/certificates/a7e4602db735",
       description:
         "Certified in JavaScript programming, showcasing proficiency in core language features, algorithms, and problem-solving skills essential for modern web development.",
+      icon: <JavaScriptIcon />,
+      theme: THEMES.javascript,
     },
   ];
 
@@ -136,13 +169,7 @@ const Certifications = () => {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 w-full">
             {certifications.map((cert, index) => {
-              const gradientClass =
-                ISSUER_COLORS[cert.issuer] ?? ISSUER_COLORS["Hackerrank"];
-              const iconClass =
-                ISSUER_ICON_STYLES[cert.issuer] ?? "bg-pink-100 text-pink-600";
-              const linkClass =
-                ISSUER_LINK_STYLES[cert.issuer] ??
-                "text-pink-600 hover:text-pink-700";
+              const { theme } = cert;
 
               return (
                 <motion.div
@@ -152,13 +179,18 @@ const Certifications = () => {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
                   whileHover={{ y: -5 }}
-                  className={`bg-gradient-to-br ${gradientClass} border rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300`}
+                  className="rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300"
+                  style={{
+                    background: theme.gradient,
+                    border: theme.border,
+                  }}
                 >
                   <div className="flex items-start gap-4 mb-4">
                     <div
-                      className={`p-2.5 rounded-lg flex-shrink-0 ${iconClass}`}
+                      className="w-10 h-10 rounded-lg flex-shrink-0 flex items-center justify-center"
+                      style={{ background: theme.iconBg }}
                     >
-                      <FaCertificate className="text-xl" />
+                      {cert.icon ?? <FaCertificate className="text-xl" />}
                     </div>
                     <div className="flex-1 min-w-0">
                       <h3 className="text-base font-bold text-neutral-800 leading-snug">
@@ -185,7 +217,8 @@ const Certifications = () => {
                         href={cert.credentialUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`flex items-center gap-1.5 text-sm font-semibold transition-colors ${linkClass}`}
+                        className="flex items-center gap-1.5 text-sm font-semibold transition-opacity hover:opacity-80"
+                        style={{ color: theme.link }}
                       >
                         Verify
                         <FaExternalLinkAlt className="text-xs" />

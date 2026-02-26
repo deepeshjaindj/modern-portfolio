@@ -4,8 +4,11 @@ import React from "react";
 import { motion } from "framer-motion";
 import { AuroraText } from "../atoms";
 import {
+  AirtableIcon,
   AntDesignIcon,
   AWSIcon,
+  ClaudeIcon,
+  CursorIcon,
   AxiosIcon,
   CSSIcon,
   DockerIcon,
@@ -19,10 +22,12 @@ import {
   GraphQLIcon,
   HTMLIcon,
   JavaScriptIcon,
+  JiraIcon,
   KnexIcon,
   KubernetesIcon,
   MUIIcon,
   MySQLIcon,
+  NetlifyIcon,
   NextJSIcon,
   NodeJSIcon,
   NPMIcon,
@@ -32,12 +37,15 @@ import {
   ReactQueryIcon,
   RedisIcon,
   ReduxIcon,
+  SalesforceIcon,
   ShadcnIcon,
+  StackAIIcon,
   StrapiIcon,
   TailwindIcon,
   TypeScriptIcon,
   VercelIcon,
   VsCodeIcon,
+  WorkatoIcon,
 } from "@/assets";
 import MongoDBIcon from "@/assets/MongoDBIcon";
 
@@ -85,8 +93,23 @@ const categories = [
       { title: "Vercel", icon: <VercelIcon /> },
       { title: "Docker", icon: <DockerIcon /> },
       { title: "Kubernetes", icon: <KubernetesIcon /> },
+      { title: "Netlify", icon: <NetlifyIcon /> },
       { title: "Firebase", icon: <FirebaseIcon /> },
     ],
+  },
+  {
+    title: "Integration & AI Automation",
+    color: "blue",
+    skills: [
+      { title: "Workato", icon: <WorkatoIcon /> },
+      { title: "Stack AI", icon: <StackAIIcon /> },
+      { title: "Airtable", icon: <AirtableIcon /> },
+    ],
+  },
+  {
+    title: "CRM",
+    color: "sky",
+    skills: [{ title: "Salesforce Administration", icon: <SalesforceIcon /> }],
   },
   {
     title: "Tools",
@@ -96,9 +119,12 @@ const categories = [
       { title: "GitHub", icon: <GithubIcon /> },
       { title: "GitLab", icon: <GitLabIcon /> },
       { title: "NPM", icon: <NPMIcon /> },
+      { title: "JIRA", icon: <JiraIcon /> },
       { title: "ESLint", icon: <EsLintIcon /> },
       { title: "Postman", icon: <PostmanIcon /> },
       { title: "VS Code", icon: <VsCodeIcon /> },
+      { title: "Cursor", icon: <CursorIcon /> },
+      { title: "Claude", icon: <ClaudeIcon /> },
     ],
   },
 ];
@@ -111,6 +137,14 @@ const COLOR_CONFIG: Record<string, { dot: string; header: string }> = {
   purple: {
     dot: "bg-purple-400",
     header: "text-purple-600 border-purple-200 bg-purple-50",
+  },
+  blue: {
+    dot: "bg-blue-400",
+    header: "text-blue-600 border-blue-200 bg-blue-50",
+  },
+  sky: {
+    dot: "bg-sky-400",
+    header: "text-sky-600 border-sky-200 bg-sky-50",
   },
   pink: {
     dot: "bg-pink-400",
