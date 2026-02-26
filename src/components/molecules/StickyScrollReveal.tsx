@@ -126,7 +126,7 @@ export const StickyScroll = ({ content }: StickyScrollProps) => {
               width={1203}
               height={753}
               decoding="async"
-              className={`w-full max-w-[85%] translate-y-5 -rotate-3 rounded-t-lg border-[1.5px] border-white shadow-[0_0_30px_${item.backgroundColors[2]}] transition-all duration-300 will-change-transform lg:block lg:rotate-0 lg:group-hover:scale-[1.08] lg:group-hover:-rotate-3 lg:group-hover:translate-y-10`}
+              className={`w-full max-w-[85%] translate-y-5 -rotate-3 rounded-t-lg border-[1.5px] border-white shadow-[0_0_30px_${item.backgroundColors[2]}] transition-all duration-300 lg:will-change-transform lg:block lg:rotate-0 lg:group-hover:scale-[1.08] lg:group-hover:-rotate-3 lg:group-hover:translate-y-10`}
               src={item.projectImage}
             />
           </div>

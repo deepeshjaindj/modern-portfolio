@@ -240,7 +240,7 @@ const Projects = () => {
               { title: "React Query", icon: <SiReactquery /> },
               { title: "AWS", icon: <SiAmazonwebservices /> },
             ],
-            projectImage: "/ftc.png",
+            projectImage: "/ftc.webp",
             backgroundColors: [
               "rgb(120, 25, 30)",
               "rgb(210, 45, 50)",
