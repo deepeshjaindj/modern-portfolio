@@ -2,10 +2,7 @@ import React from "react";
 
 const AirtableIcon = () => {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 111.6 93.4"
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 111.6 93.4">
       <g>
         <g>
           <path
