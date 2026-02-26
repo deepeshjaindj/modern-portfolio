@@ -41,11 +41,12 @@ export const metadata: Metadata = {
     template: "%s | Deepesh Jain Portfolio",
   },
   description:
-    "Experienced Fullstack Developer building scalable web apps using React, Next.js, Node.js, and Tailwind. 3+ years of experience crafting dynamic, modern web applications with TypeScript, AWS, and cloud services.",
+    "Results-driven Full-Stack Software Engineer with 3+ years of experience developing scalable web applications and enterprise integration solutions. Expert in React.js, Next.js, Node.js, TypeScript, and Workato.",
   keywords: [
     "Deepesh Jain",
     "Deepesh Jain Portfolio",
     "Deepesh Jain Resume",
+    "Senior Software Engineer",
     "Fullstack Developer",
     "Frontend Developer",
     "Backend Developer",
@@ -87,7 +88,7 @@ export const metadata: Metadata = {
     siteName: "Deepesh Jain Portfolio",
     title: "Deepesh Jain - An Engineer and a Problem Solver",
     description:
-      "Experienced Fullstack Developer building scalable web apps using React, Next.js, Node.js, and Tailwind. Specializing in TypeScript, AWS, and modern web technologies.",
+      "Results-driven Senior Software Engineer with 3.5+ years of experience developing scalable web applications and enterprise integration solutions. Expert in React.js, Next.js, Node.js, Workato, and JavaScript.",
     images: [
       {
         url: `${siteUrl}/deepesh-profile.png`,
@@ -101,7 +102,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Deepesh Jain - An Engineer and a Problem Solver",
     description:
-      "Experienced Fullstack Developer building scalable web apps using React, Next.js, Node.js, and Tailwind.",
+      "Results-driven Full-Stack Software Engineer with 3+ years of experience. Expert in React.js, Next.js, Node.js, and TypeScript.",
     creator: "@deepeshjaindj2",
     images: [`${siteUrl}/deepesh-profile.png`],
   },
@@ -145,17 +146,17 @@ export default function RootLayout({
           "https://twitter.com/deepeshjaindj2",
           "https://stackoverflow.com/users/14953697/deepesh-jain",
         ],
-        jobTitle: "Fullstack Developer",
+        jobTitle: "Senior Software Engineer",
         worksFor: {
           "@type": "Organization",
-          name: "Ksolves India Limited",
+          name: "OneSolve Technologies",
         },
         description:
-          "Fullstack Developer specializing in scalable web apps using React, Next.js, Node.js, and TypeScript.",
+          "Senior Software Engineer specializing in scalable web applications and enterprise integration solutions using React, Next.js, Node.js, and TypeScript.",
         image: `${siteUrl}/deepesh-profile.png`,
         alumniOf: {
           "@type": "EducationalOrganization",
-          name: "Babulal Tarabai Institute of Research and Technology",
+          name: "Rajiv Gandhi Techniocal University",
         },
         knowsAbout: [
           "React",
@@ -166,6 +167,10 @@ export default function RootLayout({
           "Full Stack Development",
           "Web Development",
           "Software Engineering",
+          "Workato",
+          "Stack AI",
+          "Salesforce",
+          "Enterprise Integration",
         ],
       },
       {
@@ -204,6 +209,10 @@ export default function RootLayout({
           "Backend Development",
           "React Development",
           "Next.js Development",
+          "Workato",
+          "Stack AI",
+          "Enterprise Integration",
+          "Workflow Automation",
         ],
       },
     ],

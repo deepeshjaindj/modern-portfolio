@@ -11,7 +11,7 @@ import { ContactForm } from "../molecules";
 
 const STATS = [
   { value: "3.5+", label: "Years Exp." },
-  { value: "10+", label: "Projects" },
+  { value: "15+", label: "Projects" },
   { value: "20+", label: "Technologies" },
   { value: "6+", label: "Clients" },
 ];
@@ -88,7 +88,7 @@ const Hero: NextPage = () => {
                 className="object-cover w-full h-full"
               />
             </div>
-            <span>a Fullstack Developer</span>
+            <span>a Senior Software Engineer</span>
           </motion.h2>
 
           {/* Call-to-Action Buttons */}

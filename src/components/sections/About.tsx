@@ -8,7 +8,7 @@ import { SOCIAL_LINKS } from "@/utils/constants";
 
 const ABOUT_STATS = [
   { value: "3.5+", label: "Years of\nExperience" },
-  { value: "10+", label: "Projects\nDelivered" },
+  { value: "15+", label: "Projects\nDelivered" },
   { value: "35+", label: "Tools and\nTechnologies" },
 ];
 
@@ -51,25 +51,25 @@ const About = () => {
             className="flex-1 text-left text-base md:text-lg leading-relaxed space-y-4 order-2 md:order-1"
           >
             <p className="text-center md:text-left text-neutral-700">
-              Hey, I&apos;m Deepesh Jain — a Fullstack Developer who&apos;s
-              obsessed with crafting interfaces that don&apos;t just look good,
-              but feel right.
+              Hey, I&apos;m Deepesh Jain — a Results-driven Senior Software
+              Engineer with 3.5+ years of experience developing scalable web
+              applications and enterprise integration solutions.
             </p>
             <p className="text-center md:text-left">
-              I believe the best web experiences happen when design and
-              engineering shake hands — and that&apos;s exactly where I thrive.
-              Whether I&apos;m architecting a system or obsessing over a
-              button&apos;s hover state, I bring equal parts logic and love to
-              both sides of the stack.
+              Expert in modern JavaScript frameworks (React.js, Next.js,
+              Node.js) with a proven ability to architect end-to-end solutions,
+              automate business workflows, and optimize system performance.
             </p>
             <p className="text-center md:text-left">
-              Performance, accessibility, responsive design, clean code — these
-              aren&apos;t buzzwords to me, they&apos;re checkboxes I never skip.
+              I&apos;ve demonstrated success in leading cross-functional teams,
+              modernizing legacy systems, and delivering high-impact technical
+              solutions that drive business growth. Proficient in Workato
+              integration platform, Salesforce administration, and Agile
+              methodologies.
             </p>
             <p className="text-center md:text-left">
               When I&apos;m not coding, I&apos;m probably diving into a new tech
-              tool, sipping coffee ☕, or mentoring fellow devs in the
-              community.
+              tool, sipping coffee, or mentoring fellow devs in the community.
             </p>
 
             {/* Stats Cards */}

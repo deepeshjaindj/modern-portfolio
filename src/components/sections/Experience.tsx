@@ -47,6 +47,7 @@ const Experience = () => {
               "Architected and deployed complex integration workflows using Workato platform, connecting Salesforce, databases, and third-party APIs to automate critical business processes across multiple enterprise systems.",
               "Reduced manual workload by 40% through collaboration with business analysts and stakeholders to gather requirements and implement automated solutions.",
               "Enhanced system performance by 35% by identifying workflow bottlenecks and implementing industry best practices for integration optimization.",
+              "Engineered custom connectors and recipes to enable real-time data synchronization across platforms, ensuring 99.9% data accuracy.",
               "Implemented comprehensive error-handling mechanisms and monitoring solutions, achieving 99.5% uptime and reducing issue resolution time by 50%.",
             ].map((item, idx) => (
               <li key={idx}>{item}</li>
@@ -93,24 +94,20 @@ const Experience = () => {
       content: (
         <div className="mb-8 text-sm md:text-md lg:text-lg font-normal text-neutral-600">
           <p>
-            At Ksolves India Ltd, I work as a Fullstack Developer with a strong
-            frontend focus — building, optimizing, and scaling modern web
-            applications. I collaborat across teams to deliver high-quality
-            features, write clean, maintainable code, contribute to both
-            frontend and backend stacks, and actively handle deployment
-            workflows. Every project refine my skills — from crafting
-            pixel-perfect UIs to architecting scalable APIs and shipping
-            production-ready apps on platforms like Vercel and AWS.
+            At Ksolves India Ltd, I spearheaded the development of scalable,
+            user-centric applications using React.js, delivering 15+ successful
+            projects on time and within budget. I led cross-functional
+            collaboration with frontend, backend, QA, and client teams to ensure
+            delivery of high-quality solutions meeting business requirements.
           </p>
           <ul className="list-disc pl-6 space-y-3 mt-3 mb-5">
             {[
-              "Built and optimized production-grade web apps using Next.js, React.js, and TypeScript — enhancing page load speeds by up to 30%.",
-              "Integrated scalable backend APIs using Node.js and Express, ensuring seamless data flow and authentication with JWT-based security.",
-              "Refactored legacy monolithic codebases into modular, component-driven architectures, reducing maintenance time by 25%.",
-              "Developed and consumed RESTful services with MongoDB and PostgreSQL databases, following best practices for secure and efficient data handling.",
-              "Led deployment processes on platforms like Vercel, Netlify, and AWS, setting up CI/CD pipelines for faster releases.",
-              "Advocated for clean code practices, introducing ESLint and Prettier standardization across frontend and backend projects.",
-              "Collaborated closely with cross-functional teams — designers, testers, backend engineers — to deliver 100% client-approved solutions within tight deadlines.",
+              "Spearheaded development of scalable, user-centric applications using React.js, delivering 15+ successful projects on time and within budget.",
+              "Modernized 5+ legacy React projects by implementing updated libraries and architectural best practices, improving performance by 40% and reducing maintenance costs.",
+              "Designed and optimized architecture for large-scale React applications, ensuring scalability to support 100K+ concurrent users.",
+              "Established comprehensive testing framework using Jest and React Testing Library, achieving 85% code coverage and reducing production bugs by 60%.",
+              "Accelerated development cycles by 30% through creation of reusable component library and optimization of state management with React Query.",
+              "Led cross-functional collaboration with frontend, backend, QA, and client teams to ensure delivery of high-quality solutions meeting business requirements.",
             ].map((item, idx) => (
               <li key={idx}>{item}</li>
             ))}
@@ -163,12 +160,11 @@ const Experience = () => {
           </p>
           <ul className="list-disc pl-6 space-y-3 mt-3 mb-5">
             {[
-              "Designed and implemented responsive UIs with React.js and Tailwind CSS, achieving pixel-perfect matches to Figma designs.",
-              "Worked hands-on with Redux for efficient state management and lazy loading to boost mobile and desktop performance.",
-              "Integrated complex backend services via REST APIs, focusing on robust error handling and user experience.",
-              "Actively contributed to backend tasks — creating CRUD APIs with Express.js and managing server-side logic.",
-              "Deployed and maintained projects on Vercel, gaining experience in serverless hosting and deployment workflows.",
-              "Collaborated with senior developers to fix bugs, optimize codebases, and deliver client projects with more than 95% on-time completion rate.",
+              "Developed responsive, reusable React.js components following atomic design principles, ensuring scalability and maintainability across applications.",
+              "Integrated RESTful APIs for seamless data communication and dynamic content rendering, implementing robust error handling for optimal user experience.",
+              "Optimized application performance by 35% through implementation of lazy loading, code splitting, and efficient state management with Redux.",
+              "Collaborated with UI/UX teams to deliver pixel-perfect, responsive designs using HTML5, CSS3, and Tailwind CSS, ensuring cross-device compatibility and WCAG accessibility standards.",
+              "Enhanced application functionality and user experience by debugging and resolving complex issues using React DevTools.",
             ].map((item, idx) => (
               <li key={idx}>{item}</li>
             ))}
